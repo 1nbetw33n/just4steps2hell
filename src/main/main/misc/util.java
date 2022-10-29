@@ -146,6 +146,19 @@ public final class util {
         return list;
     }
 
+    @SuppressWarnings("SuspiciousMethodCalls")
+    public static @NotNull List<? extends String> file2List(@NotNull final String PATH, final int skip_lines) throws IOException {
+        @SuppressWarnings("resource")
+        List<? extends String> list = Files
+                .lines(Paths.get(PATH))
+                .skip(skip_lines)
+                .map(String::toLowerCase)
+                .collect(Collectors.toList());
+        //removes empty lines
+        list.removeAll(Collections.singleton(""));
+        return list;
+    }
+
     /*
     gets the path of the file, that contains the keywords we want to search for
     - then using file2List()
