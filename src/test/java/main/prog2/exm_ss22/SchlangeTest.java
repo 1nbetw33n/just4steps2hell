@@ -30,6 +30,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import prog2.exm_ss22.Schlange;
 
+import java.util.Objects;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
@@ -51,7 +53,7 @@ class SchlangeTest {
 
 	@Test
 	void insertRemoveTest(){
-		schlange.insert(1);
+		Objects.requireNonNull(schlange).insert(1);
 		schlange.insert(2);
 		schlange.insert(3);
 		schlange.insert(4);
@@ -67,7 +69,7 @@ class SchlangeTest {
 
 	@Test
 	void removeEmptyExceptionTest(){
-		Assertions.assertThrows(RuntimeException.class, () -> schlange.remove());
+		Assertions.assertThrows(RuntimeException.class, () -> Objects.requireNonNull(schlange).remove());
 	}
 
 }

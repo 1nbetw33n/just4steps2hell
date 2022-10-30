@@ -11,6 +11,7 @@ import prog2.exm_ss22.Util;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -62,14 +63,14 @@ class UtilTest {
 
 	@Test
 	void testNumElementesInCollection() {
-		assertEquals(0, Util.numElementesInCollection(studentsEmpty, student1));
-		assertEquals(2, Util.numElementesInCollection(studentsFilled, student1));
+		assertEquals(0, Util.numElementesInCollection(Objects.requireNonNull(studentsEmpty), student1));
+		assertEquals(2, Util.numElementesInCollection(Objects.requireNonNull(studentsFilled), student1));
 	}
 
 	@Test
 	void test_sCopy() {
-		Util.sCopy(src, dst);
-		assertEquals(src.size(), dst.size());
+		Util.sCopy(src, Objects.requireNonNull(dst));
+		assertEquals(Objects.requireNonNull(src).size(), dst.size());
 		assertEquals(src.remove(), dst.remove());
 		assertEquals(src.remove(), dst.remove());
 		assertEquals(src.remove(), dst.remove());

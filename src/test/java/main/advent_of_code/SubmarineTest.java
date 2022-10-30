@@ -30,6 +30,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
@@ -48,7 +50,7 @@ class SubmarineTest {
 	@Test
 	@DisplayName("tests if submarine methods moving the submarine like expected")
 	void testSubmarineMoving() {
-		submarine.forward(5);
+		Objects.requireNonNull(submarine).forward(5);
 		submarine.down(5);
 		submarine.forward(8);
 		submarine.up(3);

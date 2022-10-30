@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static misc.util.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -59,8 +60,8 @@ class DateTest {
 
 	@Test
 	void is_leap_year_test() {
-		leap_dates.forEach(date -> assertTrue(((Date) date).is_leap_year()));
-		non_leap_dates.forEach(date -> assertFalse(((Date) date).is_leap_year()));
+		Objects.requireNonNull(leap_dates).forEach(date -> assertTrue(((Date) date).is_leap_year()));
+		Objects.requireNonNull(non_leap_dates).forEach(date -> assertFalse(((Date) date).is_leap_year()));
 	}
 
 	@Test

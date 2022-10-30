@@ -7,10 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import static misc.IngredientChecker.BLACKLIST;
 import static misc.util.file2List;
@@ -56,28 +53,28 @@ class IngredientCheckerTest {
 	@Test
 	@DisplayName("checks if file content is converted correctly into a list")
 	void file2ListTest() throws IOException {
-		assertEquals(referenceList, file2List(ingredients0));
+		assertEquals(referenceList, file2List(Objects.requireNonNull(ingredients0)));
 	}
 
 	@Test
 	@DisplayName("positive checks if any ingredient is on the blacklist")
 	void checkProductPositiveTest() throws IOException {
 		//there should be hits for "methylparabene", "bisaminopropyl dimethicone","isopropanol"
-		assertEquals(Arrays.asList("methylparabene", "bisaminopropyl dimethicone","isopropanol"), showMatches(ingredients1, BLACKLIST));
+		assertEquals(Arrays.asList("methylparabene", "bisaminopropyl dimethicone","isopropanol"), showMatches(Objects.requireNonNull(ingredients1), BLACKLIST));
 	}
 
 	@Test
 	@DisplayName("checks with a real product")
 	void checkOlaplex5() throws IOException {
 		//there should be hits for "cetyl esters", "isododecane", "quaternium-95", "peg-8", "c11-15 pareth-7", "amodimethicone", "c12-13 pareth-23", "c12-13 pareth-3", "laureth-9", "phenoxyethanol"
-		assertEquals(Arrays.asList("cetyl esters", "isododecane", "quaternium-95", "peg-8", "c11-15 pareth-7", "amodimethicone", "c12-13 pareth-23", "c12-13 pareth-3", "laureth-9", "phenoxyethanol"), showMatches(olaplex5, BLACKLIST));
+		assertEquals(Arrays.asList("cetyl esters", "isododecane", "quaternium-95", "peg-8", "c11-15 pareth-7", "amodimethicone", "c12-13 pareth-23", "c12-13 pareth-3", "laureth-9", "phenoxyethanol"), showMatches(Objects.requireNonNull(olaplex5), BLACKLIST));
 	}
 
 	@Test
 	@DisplayName("false checks if any ingredient is on the blacklist")
 	void checkProductFalseTest() throws IOException {
 		//there should be no hits -> only 'safe to use:)' should be in the list
-		assertEquals(showMatches(ingredients2, BLACKLIST), new ArrayList<>(Collections.singleton("safe to use:)")));
+		assertEquals(showMatches(Objects.requireNonNull(ingredients2), BLACKLIST), new ArrayList<>(Collections.singleton("safe to use:)")));
 	}
 
 }

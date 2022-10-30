@@ -30,6 +30,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 import static ex4.No2.toBinaryString;
 import static ex4.No2.toBinaryString2;
@@ -114,11 +115,11 @@ class No2Test {
 	@Test
 	@DisplayName("checks if the array contains the expected number as binary number in the correct order")
 	void testToBinaryString1() {
-		assertEquals(Arrays.toString((expectedValue1).toCharArray()), Arrays.toString(binaryString1));
-		assertEquals(Arrays.toString((expectedValue2).toCharArray()), Arrays.toString(binaryString2));
-		assertEquals(Arrays.toString((expectedValue3).toCharArray()), Arrays.toString(binaryString3));
-		assertEquals(Arrays.toString((expectedValue4).toCharArray()), Arrays.toString(binaryString4));
-		assertEquals(Arrays.toString((expectedValue5).toCharArray()), Arrays.toString(binaryString5));
+		assertEquals(Arrays.toString((Objects.requireNonNull(expectedValue1)).toCharArray()), Arrays.toString(binaryString1));
+		assertEquals(Arrays.toString((Objects.requireNonNull(expectedValue2)).toCharArray()), Arrays.toString(binaryString2));
+		assertEquals(Arrays.toString((Objects.requireNonNull(expectedValue3)).toCharArray()), Arrays.toString(binaryString3));
+		assertEquals(Arrays.toString((Objects.requireNonNull(expectedValue4)).toCharArray()), Arrays.toString(binaryString4));
+		assertEquals(Arrays.toString((Objects.requireNonNull(expectedValue5)).toCharArray()), Arrays.toString(binaryString5));
 		assertEquals(Arrays.toString((expectedValue1).toCharArray()), Arrays.toString(intArray1));
 		assertEquals(Arrays.toString((expectedValue2).toCharArray()), Arrays.toString(intArray2));
 		assertEquals(Arrays.toString((expectedValue3).toCharArray()), Arrays.toString(intArray3));
