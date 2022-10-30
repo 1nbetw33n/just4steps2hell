@@ -118,7 +118,7 @@ public final class util {
         System.out.println("\t" + text);
     }
 
-    public static void print_list(final List<?> list){
+    public static void print_list(final @NotNull List<?> list){
         list.forEach(System.out::println);
     }
 
@@ -179,7 +179,7 @@ public final class util {
     }
 
     //read content of csv file into a list of ints with newline as separator
-    public static List<? super Integer> csv2list(final String path, final String regex) throws IOException {
+    public static @NotNull List<? super Integer> csv2list(final @NotNull String path, final @NotNull String regex) throws IOException {
         List<? super Integer> list = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(path));
         String line;

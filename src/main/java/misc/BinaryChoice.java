@@ -28,6 +28,8 @@ package misc;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Random;
 
 final class BinaryChoice {
@@ -35,7 +37,7 @@ final class BinaryChoice {
     private static final String[] binaryChoice = {"Frau", "Mann"};
     private static final Random random = new Random();
 
-    private static String getRandomBinaryChoice() {
+    private static @NotNull String getRandomBinaryChoice() {
         return binaryChoice[random.nextInt(binaryChoice.length)];
     }
 

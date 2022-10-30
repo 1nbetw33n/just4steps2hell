@@ -28,6 +28,8 @@ package eidp.ss20.ex1;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 @SuppressWarnings({"unused", "CommentedOutCode"})
 public class Logic_Util {
 
@@ -46,14 +48,14 @@ public class Logic_Util {
         System.out.println("\n");
     }
 
-        static Player get_instance_of_player(){
+        static @NotNull Player get_instance_of_player(){
             return new Player();
         }
-        static Point_2D get_instance_of_point_2D(){
+        static @NotNull Point_2D get_instance_of_point_2D(){
             return new Point_2D();
         }
 
-        static Rectangle get_instance_of_rectangle(){
+        static @NotNull Rectangle get_instance_of_rectangle(){
         return new Rectangle();
         }
 
@@ -130,7 +132,7 @@ public class Logic_Util {
             this.y = y;
         }
 
-        Point_2D(Point_2D point_2d){
+        Point_2D(@NotNull Point_2D point_2d){
             x = point_2d.x;
             y = point_2d.y;
         }
@@ -154,7 +156,7 @@ public class Logic_Util {
             return y;
         }
 
-        public String toString() {
+        public @NotNull String toString() {
             return "(" + x + ", " + y + ")";
         }
 
@@ -172,7 +174,7 @@ public class Logic_Util {
 
     static class Rectangle{
 
-        final Point_2D ref;
+        final @NotNull Point_2D ref;
         final double l;
         final double h;
 
@@ -181,13 +183,13 @@ public class Logic_Util {
             l = h = 0.;
         }
 
-        Rectangle(Point_2D p, double l, double h){
+        Rectangle(@NotNull Point_2D p, double l, double h){
             ref = new Point_2D(p);
             this.l = l;
             this.h = h;
         }
 
-        Rectangle(Point_2D bottom_left, Point_2D top_right){
+        Rectangle(@NotNull Point_2D bottom_left, @NotNull Point_2D top_right){
             ref = new Point_2D(bottom_left);
             l = top_right.x - bottom_left.x;
             h = top_right.y - bottom_left.y;
@@ -211,7 +213,7 @@ public class Logic_Util {
             return l - h < .000001;
         }
 
-        String to_string(){
+        @NotNull String to_string(){
             return "(" + (ref.x) + ", " + (ref.y + h) + ")" + "\t(" + (ref.x + l) + ", " + (ref.y + h) + ")\n(" + ref.x + ", " + ref.y + ")\t(" + (ref.x + l) + ", " + ref.y + ")\n";
         }
 

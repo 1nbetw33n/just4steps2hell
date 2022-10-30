@@ -29,6 +29,8 @@ package prog2.misc;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -56,24 +58,24 @@ public class LAMBDAS{
         return true;
     }
 
-    static void printPrimes(List<? extends Integer> list){
+    static void printPrimes(@NotNull List<? extends Integer> list){
         list.stream().filter(LAMBDAS::isPrime).forEach(System.out::println);
     }
 
-    static void printNotPrimes(List<? extends Integer> list){
+    static void printNotPrimes(@NotNull List<? extends Integer> list){
         list.stream().filter(((Predicate<Integer>) LAMBDAS::isPrime).negate()).forEach(System.out::println);
     }
 
-    static void greet(List<? super String> list){
+    static void greet(@NotNull List<? super String> list){
         list.forEach(name -> System.out.println("hello " + name));
     }
 
     //copy datastructure from source to target
-    static <T> void copyDatastructure(List<? extends T> source, List<? super T> target){
+    static <T> void copyDatastructure(@NotNull List<? extends T> source, @NotNull List<? super T> target){
         target.addAll(source);
     }
 
-    static void copyLighterThan(List<? extends Portable> source, List<? super Portable> target, double threshold){
+    static void copyLighterThan(@NotNull List<? extends Portable> source, @NotNull List<? super Portable> target, double threshold){
         for (Portable portable : source) {
             if(portable.getWeight() < threshold){target.add(portable);}
         }

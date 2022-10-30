@@ -29,6 +29,8 @@
 package eidp.ws19.admission_tests.saegewerk2;
 
 
+import org.jetbrains.annotations.NotNull;
+
 public class Saegewerk {
 
 	public static void main(String[] args){
@@ -50,7 +52,7 @@ public class Saegewerk {
 	}
 
 	@SuppressWarnings("LoopConditionNotUpdatedInsideLoop")
-	public static void schneiden(Balken[] balken, Baumstamm[] staemme){
+	public static void schneiden(Balken @NotNull [] balken, Baumstamm @NotNull [] staemme){
 		double gewichtGeschnitten = 0;
 		for (int i = 0; i < balken.length; i++){
 			double dickeBalken = balken[i].dicke();

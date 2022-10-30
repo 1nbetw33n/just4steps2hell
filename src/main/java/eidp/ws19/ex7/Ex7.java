@@ -29,6 +29,7 @@ package eidp.ws19.ex7;
  */
 
 import misc.util;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
@@ -36,7 +37,7 @@ import static misc.util.all_tests_passed;
 
 final class exercise7{
 
-    private static int count_occurrences(final int[] slice, final int n){
+    private static int count_occurrences(final int @NotNull [] slice, final int n){
         int count  = 0;
         for(int i: slice){
             if(i == n){
@@ -46,7 +47,7 @@ final class exercise7{
         return count;
     }
 
-    private static int[] get_reverse_slice(final int[] slice) {
+    private static int[] get_reverse_slice(final int @NotNull [] slice) {
         final int LEN = slice.length;
         int[] reverse_slice = new int[LEN];
         for(int i = 0; i < LEN; i++){
@@ -55,7 +56,7 @@ final class exercise7{
         return reverse_slice;
     }
 
-    private static int[] reverse_slice(final int[] slice){
+    private static int[] reverse_slice(final int @NotNull [] slice){
         for(int i = 0, tmp, len = slice.length; i < len / 2; i++){
             tmp = slice[i];
             slice[i] = slice[len - i - 1];
@@ -64,7 +65,7 @@ final class exercise7{
         return slice;
     }
 
-    private static int[] concat_slices(final int[] slice1, final int[] slice2){
+    private static int[] concat_slices(final int @NotNull [] slice1, final int @NotNull [] slice2){
         final int LEN_1 = slice1.length;
         final int LEN_2 = slice2.length;
         final int LEN_C = LEN_1 + LEN_2;

@@ -28,9 +28,11 @@ package eidp.ws19.ex6;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 public class Ex6 {
 
-    static Number gcd_loop(Number no1, Number no2){
+    static @NotNull Number gcd_loop(@NotNull Number no1, @NotNull Number no2){
         while (!no1.equals(no2)){
             if (no1.doubleValue() > no2.doubleValue()){
                 no1 = no1.doubleValue() - no2.doubleValue();
@@ -41,7 +43,7 @@ public class Ex6 {
         return no1.doubleValue();
     }
 
-    static Number gcd_rec(Number no1, Number no2){
+    static Number gcd_rec(@NotNull Number no1, @NotNull Number no2){
         if (no1.equals(no2)) {
             return no1.doubleValue();
         } else if (no1.doubleValue() > no2.doubleValue()) {
@@ -51,7 +53,7 @@ public class Ex6 {
         }
     }
 
-    static Number gcd_mod_loop(Number no1, Number no2){
+    static @NotNull Number gcd_mod_loop(@NotNull Number no1, @NotNull Number no2){
         Number tmp;
         while (!no2.equals(0)){
             tmp = no2;
@@ -61,7 +63,7 @@ public class Ex6 {
         return no1.doubleValue();
     }
 
-    static Number gcd_euclid(Number no1, Number no2){
+    static Number gcd_euclid(@NotNull Number no1, @NotNull Number no2){
             return no1.doubleValue() % no2.doubleValue() - 0 < .000001 ? no2.doubleValue() : gcd_euclid(no2, no1.doubleValue() % no2.doubleValue());
     }
 

@@ -27,16 +27,18 @@ package eidp.ws19.ex8;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 public class ex8 {
 
-	static Double calc_regular_chain_fraction(final Double[] A, int i){
+	static @NotNull Double calc_regular_chain_fraction(final Double @NotNull [] A, int i){
 		//noinspection LoopStatementThatDoesntLoop
 		while (i < A.length) {
 			return A[i] + (1 / calc_regular_chain_fraction(A, ++i));
 		}
 		return 0.;
 	}
-	static Double calc_chain_fraction(final Double[] A, int i){
+	static @NotNull Double calc_chain_fraction(final Double @NotNull [] A, int i){
 		//noinspection LoopStatementThatDoesntLoop
 		while (i < A.length) {
 			return A[i] + (i  / calc_chain_fraction(A, ++i));

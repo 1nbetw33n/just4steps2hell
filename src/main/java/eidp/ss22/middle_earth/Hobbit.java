@@ -28,6 +28,9 @@ package eidp.ss22.middle_earth;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
+@SuppressWarnings("unused")
 public class Hobbit extends Entity{
 
     private int maxAge = 150;
@@ -38,7 +41,7 @@ public class Hobbit extends Entity{
 
     public boolean alive() {return getAge() - getMaxAge() < 0;}
 
-    public String greet() {return "Hallo!";}
+    public @NotNull String greet() {return "Hallo!";}
 
     public void getsWounded(int damage) {
         setMaxAge(getMaxAge() - damage);
@@ -51,5 +54,5 @@ public class Hobbit extends Entity{
 
     public void resetMaxAge() {maxAge = 150;}
 
-    public String toString() {return getName() + " | " + getAge() + " | " + getMaxAge();}
+    public @NotNull String toString() {return getName() + " | " + getAge() + " | " + getMaxAge();}
 }

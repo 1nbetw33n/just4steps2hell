@@ -28,7 +28,10 @@
 
 package eidp.ws19.admission_tests.saegewerk3;
 
+@SuppressWarnings("unused")
 public interface Bearbeiten {
 
-	void saegen(Baumstamm stamm, double laenge);
+	default void saegen(Baumstamm stamm, double laenge) {
+
+	}
 }

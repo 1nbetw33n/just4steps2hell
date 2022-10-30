@@ -1,5 +1,6 @@
 package main.misc;
 
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -22,11 +23,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class IngredientCheckerTest {
 
-	private String ingredients0;
-	private String ingredients1;
-	private String ingredients2;
-	private String olaplex5;
-	private List<? super String> referenceList;
+	private @Nullable String ingredients0;
+	private @Nullable String ingredients1;
+	private @Nullable String ingredients2;
+	private @Nullable String olaplex5;
+	private @Nullable List<? super String> referenceList;
 
 	@SuppressWarnings({"unchecked", "rawtypes", "SpellCheckingInspection"})
 	@BeforeEach

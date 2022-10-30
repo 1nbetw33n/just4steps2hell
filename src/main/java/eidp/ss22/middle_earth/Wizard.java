@@ -28,6 +28,8 @@ package eidp.ss22.middle_earth;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 @SuppressWarnings("unused")
 public class Wizard extends Entity{
 
@@ -35,15 +37,15 @@ public class Wizard extends Entity{
 
     public boolean alive() {return true;}
 
-    public String greet() {return "Hail!";}
+    public @NotNull String greet() {return "Hail!";}
 
     public void getsWounded(int damage) {System.out.println("Wounding an immortal entity is pointless since they're immortal! ^.^");}
 
-    public void heals(Hobbit hobbit){
+    public void heals(@NotNull Hobbit hobbit){
         if (hobbit.alive()){hobbit.resetMaxAge();}
         else{throw new IllegalStateException("This Hobbit already died! Not even a wizard can resurrect them anymore.");}
     }
 
-    public String toString() {return getName() + " | " + getAge() + " | lives forever";}
+    public @NotNull String toString() {return getName() + " | " + getAge() + " | lives forever";}
 
 }

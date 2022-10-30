@@ -1,6 +1,7 @@
 package main.eidp.ws19.ex5;
 
 import eidp.ws19.ex5.Date;
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,10 +19,10 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class DateTest {
 
-	private List<?> leap_years;
-	private List<?> non_leap_years;
-	private List<? super Date> leap_dates;
-	private List<? super Date> non_leap_dates;
+	private @Nullable List<?> leap_years;
+	private @Nullable List<?> non_leap_years;
+	private @Nullable List<? super Date> leap_dates;
+	private @Nullable List<? super Date> non_leap_dates;
 
 	private final Date input_date1 = new Date(2018,10,7,16,30);
 	private final Date input_date2 = new Date(2018,12,31,23,59);

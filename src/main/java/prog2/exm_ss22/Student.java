@@ -28,6 +28,8 @@ package prog2.exm_ss22;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 @SuppressWarnings("unused")
 public class Student extends Person{
 
@@ -48,7 +50,7 @@ public class Student extends Person{
         return surname;
     }
 
-    public String toString() {
+    public @NotNull String toString() {
         return getName() + " " + getSurname();
     }
 }

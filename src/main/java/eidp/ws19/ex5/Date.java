@@ -40,6 +40,8 @@ package eidp.ws19.ex5;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 @SuppressWarnings("unused")
 public final class Date {
 
@@ -69,7 +71,7 @@ public final class Date {
         System.out.println(year +"\t" + month +"\t" + day +"\t" +hour +"\t" +minute + "\n");
     }
 
-    public boolean compare_date(Date date){
+    public boolean compare_date(@NotNull Date date){
         return (year == date.year && month == date.month && day == date.day && hour == date.hour && minute == date.minute);
     }
 

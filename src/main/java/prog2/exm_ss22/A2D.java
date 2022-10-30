@@ -28,6 +28,8 @@ package prog2.exm_ss22;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -35,7 +37,7 @@ import java.util.NoSuchElementException;
 public class A2D<T> implements Iterable<T>{
 
    final int zeilen , spalten;
-   final T[][] array;
+   final T[] @NotNull [] array;
 
    @SuppressWarnings("unchecked")
    public A2D(int zeilen, int spalten) {
@@ -52,14 +54,14 @@ public class A2D<T> implements Iterable<T>{
        return array[zeile][spalte];
    }
 
-   public Iterator<T> iterator() {
+   public @NotNull Iterator<T> iterator() {
        return new A2DIterator();
    }
 
    private class A2DIterator implements Iterator<T> {
 
-       private final OddIterator oddIterator;
-       private final EvenIterator evenIterator;
+       private final @NotNull OddIterator oddIterator;
+       private final @NotNull EvenIterator evenIterator;
 
        public A2DIterator() {
            oddIterator = new OddIterator();

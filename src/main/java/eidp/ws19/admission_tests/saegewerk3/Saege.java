@@ -28,12 +28,14 @@
 
 package eidp.ws19.admission_tests.saegewerk3;
 
+import org.jetbrains.annotations.NotNull;
+
 public abstract class Saege implements Bearbeiten{
 
 	private String name;
 
 
-	public void saegen(Baumstamm stamm, double laenge) {
+	public void saegen(@NotNull Baumstamm stamm, double laenge) {
 		System.out.println(stamm.getName() + " " + laenge + " m " + "saegen mit " + this.getName());
 		stamm.kuerzen(laenge);
 	}

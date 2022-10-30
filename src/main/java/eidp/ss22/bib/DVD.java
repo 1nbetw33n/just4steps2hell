@@ -28,11 +28,13 @@ package eidp.ss22.bib;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 @SuppressWarnings("unused")
 public class DVD extends Media{
 
     public DVD(String title) {super(title);}
 
-    public String signature() {return "DVD" + getID();}
+    public @NotNull String signature() {return "DVD" + getID();}
 
 }

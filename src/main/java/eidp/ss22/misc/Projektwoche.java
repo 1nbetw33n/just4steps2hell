@@ -23,6 +23,8 @@
 
 package eidp.ss22.misc;
 
+import org.jetbrains.annotations.NotNull;
+
 @SuppressWarnings({"FieldMayBeFinal", "unused"})
 public class Projektwoche {
 
@@ -48,6 +50,6 @@ public class Projektwoche {
 
     protected boolean checkIfBigEnough(int NoOfStudents){return this.maxParticipants <= NoOfStudents;}
 
-    public String toString(){return this.name + " | " + this.projektleitung;}
+    public @NotNull String toString(){return this.name + " | " + this.projektleitung;}
 
 }

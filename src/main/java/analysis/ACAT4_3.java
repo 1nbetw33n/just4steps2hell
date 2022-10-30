@@ -28,12 +28,14 @@ package analysis;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.function.Function;
 
 @SuppressWarnings("unused")
 public class ACAT4_3 {
 
-    private static double nullstelle(Function<Double, Double> f, double a, double b) {
+    private static double nullstelle(@NotNull Function<Double, Double> f, double a, double b) {
         double center = 0.;
         while (Math.abs(a - b) >= 1E-6) {
             center = (a + b) / 2;

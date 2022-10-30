@@ -28,10 +28,12 @@ package eidp.ss22.bib;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 @SuppressWarnings("unused")
 public class Book extends Media{
 
     public Book(String title) {super(title);}
 
-    public String signature() {return "B" + getID();}
+    public @NotNull String signature() {return "B" + getID();}
 }

@@ -37,13 +37,13 @@ import java.util.stream.Collectors;
 
 public class No5 {
 
-    private static final List<? super Character> FILTER_LIST;
+    private static final @NotNull List<? super Character> FILTER_LIST;
     private static final String filterString = "abcdefghijklmnopqrstuvwxyz0123456789";
 
     static{FILTER_LIST = filterString.chars().mapToObj(c -> (char) c).collect(Collectors.toList());}
 
     @SuppressWarnings("SameParameterValue")
-    static void countOccurrences(@NotNull String text, List< ? super Character> filterList){
+    static void countOccurrences(@NotNull String text, @NotNull List< ? super Character> filterList){
         int unknownCharactersCount = 0;
         HashMap<? super Character, ? super Integer> matches = new HashMap<>();
         List<? extends Character> textAsList = text.chars().mapToObj(c -> (char) c).toList();

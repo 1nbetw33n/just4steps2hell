@@ -23,6 +23,7 @@
 
 package main.prog2.exm_ss22;
 
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -36,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 class SchlangeTest {
-	private Schlange<Integer> schlange;
+	private @Nullable Schlange<Integer> schlange;
 
 	@BeforeEach
 	void setUp() {

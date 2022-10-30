@@ -28,6 +28,8 @@ package misc;
 */
 
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.Serial;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -61,7 +63,7 @@ private static long fibIterative(int n) throws FibException {
 }
 
 @SuppressWarnings("UnusedReturnValue")
-private static BigInteger fibIterativeBIG(int n) throws FibException {
+private static @NotNull BigInteger fibIterativeBIG(int n) throws FibException {
     if(n < 0){
         throw new FibException();
     } else {
@@ -101,7 +103,7 @@ private static long fibExplicit(int n) throws FibException {
         return firstTerm.multiply(rightTerm).toBigInteger();
  */
 @SuppressWarnings("UnusedReturnValue")
-private static BigInteger fibExplicitBIG(int n) throws FibException {
+private static @NotNull BigInteger fibExplicitBIG(int n) throws FibException {
     if(n < 0){
         throw new FibException();
     } else {

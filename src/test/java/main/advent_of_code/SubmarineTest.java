@@ -24,6 +24,7 @@
 package main.advent_of_code;
 
 import advent_of_code.Submarine;
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -36,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 class SubmarineTest {
-	Submarine submarine;
+	@Nullable Submarine submarine;
 
 	@BeforeEach
 	void setup(){submarine = new Submarine();}

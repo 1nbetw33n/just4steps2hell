@@ -29,8 +29,9 @@ package eidp.ss22.bib;
  */
 
 import eidp.ss22.misc.Person;
+import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal", "unused"})
+@SuppressWarnings({"FieldCanBeLocal", "unused"})
 public class User extends Person {
 
     private static int objectCounter = 1;
@@ -42,9 +43,9 @@ public class User extends Person {
         id = objectCounter++;
     }
 
-    public Media[] lentList(){return lentObjects;}
+    public Media @NotNull [] lentList(){return lentObjects;}
 
-    public void lendMedia(Media media) throws Exception {
+    public void lendMedia(@NotNull Media media) throws Exception {
         if (media.getOwner() != null) {throw new IllegalStateException("Media cant be lent because somebody else already lent it");}
         for (int i = 0; i < lentObjects.length; i++) {
             if (lentObjects[i] == null) {
@@ -61,7 +62,7 @@ public class User extends Person {
         return false;
     }
 
-    public void returnMedia(Media media){
+    public void returnMedia(@NotNull Media media){
         if (!containsMedia(media)){throw new IllegalStateException("Media that ain't lent cant be returned");}
         for (int i = 0; i < lentObjects.length; i++){
             if (lentObjects[i].equals(media)){
@@ -72,7 +73,7 @@ public class User extends Person {
         }
     }
 
-    public void returnAllMedia(Media media){
+    public void returnAllMedia(@NotNull Media media){
         for (int i = 0; i < lentObjects.length; i++){
             if (lentObjects[i] != null){
                 media.setOwner(null);

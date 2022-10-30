@@ -1,5 +1,6 @@
 package main.prog2.misc;
 
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SuppressWarnings({"unused", "CommentedOutCode"})
 class SnakeMatrixIteratorTest {
 
-	private Integer[][] snakeMatrix;
+	private Integer[] @Nullable [] snakeMatrix;
 	private SnakeMatrixIterator<?> snakeMatrixIterator;
 
 	@BeforeEach

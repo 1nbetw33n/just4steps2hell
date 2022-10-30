@@ -28,11 +28,11 @@ package eidp.ss22.bib;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
-@SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal", "unused"})
+@SuppressWarnings({"unused", "FieldCanBeLocal"})
 public abstract class Media {
 
-    private static int objectCounter = 1;
-    private String title;
+    private static final int objectCounter = 1;
+    private final String title;
     private int id;
     private User owner;
 

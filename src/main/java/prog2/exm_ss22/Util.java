@@ -28,6 +28,8 @@ package prog2.exm_ss22;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -35,7 +37,7 @@ import static java.util.Collections.*;
 
 public class Util {
 
-    public static <T> int numElementesInCollection(Collection<T> c, T t){
+    public static <T> int numElementesInCollection(@NotNull Collection<T> c, T t){
         int count = 0;
         for (T e : c) {
             if (e.equals(t)) {
@@ -45,7 +47,7 @@ public class Util {
         return count;
     }
 
-    public static <T> void sCopy(Schlange<? extends T> src, Schlange<? super T> dst){
+    public static <T> void sCopy(Schlange<? extends T> src, @NotNull Schlange<? super T> dst){
         dst.addAll(src);
     }
 

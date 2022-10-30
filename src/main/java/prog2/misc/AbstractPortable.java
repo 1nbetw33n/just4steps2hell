@@ -28,6 +28,9 @@ package prog2.misc;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
+@SuppressWarnings("unused")
 public class AbstractPortable implements Portable{
     private double weight;
 
@@ -40,7 +43,7 @@ public class AbstractPortable implements Portable{
     }
 
 
-    public String toString() {
+    public @NotNull String toString() {
         return getClass().getSimpleName() + ": " + weight;
     }
 }

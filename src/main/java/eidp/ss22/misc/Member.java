@@ -23,9 +23,12 @@
 
 package eidp.ss22.misc;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class Member {
 
     private static int memberNoCounter;
@@ -49,11 +52,11 @@ public class Member {
     protected double getTotalFee(){return membershipFee + kursList.stream().mapToDouble(Kurs::getPrice).sum();}
 
     @SuppressWarnings("unused")
-    protected void buchen(Kurs kurs){
+    protected void buchen(@NotNull Kurs kurs){
         this.kursList.add(kurs);
         kurs.anmelden(this);
     }
 
-    public String toString(){return this.name + " | " + this.memberNo;}
+    public @NotNull String toString(){return this.name + " | " + this.memberNo;}
 
 }

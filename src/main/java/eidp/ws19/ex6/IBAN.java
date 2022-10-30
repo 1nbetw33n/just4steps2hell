@@ -28,19 +28,21 @@ package eidp.ws19.ex6;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 public class IBAN {
 
     private static final int mod = 97;
     private static final int substring_length = 9;
     private static final int minuend = 98;
-    final String country_code;
-    final StringBuilder bank_code;
-    final StringBuilder account_no;
-    final StringBuilder bban;
-    final StringBuilder iban;
+    final @NotNull String country_code;
+    final @NotNull StringBuilder bank_code;
+    final @NotNull StringBuilder account_no;
+    final @NotNull StringBuilder bban;
+    final @NotNull StringBuilder iban;
 
     @SuppressWarnings("SameParameterValue")
-    IBAN(String country_code, String bank_code, String account_no) {
+    IBAN(@NotNull String country_code, @NotNull String bank_code, @NotNull String account_no) {
         this.country_code = normalize_cc(country_code);
         this.bank_code = new StringBuilder(bank_code);
         this.account_no = new StringBuilder(account_no);
@@ -48,7 +50,7 @@ public class IBAN {
         this.iban = new StringBuilder();
     }
 
-    String normalize_cc(String country_code) {
+    @NotNull String normalize_cc(@NotNull String country_code) {
         return country_code.toUpperCase();
     }
 

@@ -26,12 +26,12 @@ package eidp.ss22.misc;
 import java.util.ArrayList;
 import java.util.List;
 
-@SuppressWarnings({"FieldMayBeFinal", "unused"})
+@SuppressWarnings({"unused"})
 public class Kurs {
 
-    private String name;
-    private double price;
-    private List<Member> memberList = new ArrayList<>();
+    private final String name;
+    private final double price;
+    private final List<Member> memberList = new ArrayList<>();
     private static double totalAmountOfAllKurses;
 
     public Kurs(String name, double price) {

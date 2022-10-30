@@ -28,6 +28,7 @@ package prog2.misc;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+@SuppressWarnings("unused")
 public interface Portable {
     double getWeight();
     void setWeight(double weight);

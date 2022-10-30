@@ -1,5 +1,6 @@
 package main.prog2.exm_ss22;
 
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,14 +20,14 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class UtilTest {
 
-	private Collection<Person> studentsEmpty;
-	private Collection<Person> studentsFilled;
-	private Student student1;
-	private Student student2;
-	private Student student3;
+	private @Nullable Collection<Person> studentsEmpty;
+	private @Nullable Collection<Person> studentsFilled;
+	private @Nullable Student student1;
+	private @Nullable Student student2;
+	private @Nullable Student student3;
 
-	private Schlange<Integer> src;
-	private Schlange<Integer> dst;
+	private @Nullable Schlange<Integer> src;
+	private @Nullable Schlange<Integer> dst;
 
 
 	@BeforeEach

@@ -23,6 +23,7 @@
 
 package main.c.ex4;
 
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -44,21 +45,21 @@ class No2Test {
 	private int no3;
 	private int no4;
 	private int no5;
-	private int[] binaryString1;
-	private int[] binaryString2;
-	private int[] binaryString3;
-	private int[] binaryString4;
-	private int[] binaryString5;
-	private int[] intArray1;
-	private int[] intArray2;
-	private int[] intArray3;
-	private int[] intArray4;
-	private int[] intArray5;
-	private String expectedValue1;
-	private String expectedValue2;
-	private String expectedValue3;
-	private String expectedValue4;
-	private String expectedValue5;
+	private int @Nullable [] binaryString1;
+	private int @Nullable [] binaryString2;
+	private int @Nullable [] binaryString3;
+	private int @Nullable [] binaryString4;
+	private int @Nullable [] binaryString5;
+	private int @Nullable [] intArray1;
+	private int @Nullable [] intArray2;
+	private int @Nullable [] intArray3;
+	private int @Nullable [] intArray4;
+	private int @Nullable [] intArray5;
+	private @Nullable String expectedValue1;
+	private @Nullable String expectedValue2;
+	private @Nullable String expectedValue3;
+	private @Nullable String expectedValue4;
+	private @Nullable String expectedValue5;
 
 
 

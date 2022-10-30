@@ -28,6 +28,8 @@ package eidp.ws19.ex5;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Scanner;
 
 @SuppressWarnings("unused")
@@ -65,7 +67,7 @@ class Ex5 {
 	}
 
 	@SuppressWarnings("SameParameterValue")
-	private static String caesar_encrypt(int k, String s){
+	private static @NotNull String caesar_encrypt(int k, @NotNull String s){
 		char[] c = s.toCharArray();
 		StringBuilder sb = new StringBuilder();
 		for (char ch: c){
@@ -83,7 +85,7 @@ class Ex5 {
 		return rats;
 	}
 
-	static int count_chain(String chain){
+	static int count_chain(@NotNull String chain){
 		int longest = 0;
 		int current = 1;
 		for (int i = 1; i < chain.length(); i++){

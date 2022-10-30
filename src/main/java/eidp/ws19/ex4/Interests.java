@@ -40,6 +40,8 @@ package eidp.ws19.ex4;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.NotNull;
+
 public class Interests {
 
 	/*
@@ -55,7 +57,7 @@ public class Interests {
 		System.out.println(k0 * Math.pow((1. + i/m), (m * n)));
 	}
 
-	public static void main(String[] args){
+	public static void main(String @NotNull [] args){
 		double k0 = Double.parseDouble(args[0]);
 		double p = Double.parseDouble(args[1]);
 		double n = Double.parseDouble(args[2]);
