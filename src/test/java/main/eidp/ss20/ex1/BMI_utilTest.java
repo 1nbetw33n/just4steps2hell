@@ -1,5 +1,6 @@
 package main.eidp.ss20.ex1;
 
+import eidp.ss20.ex1.BMI_util;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

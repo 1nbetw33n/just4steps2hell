@@ -3,6 +3,7 @@ package main.prog2.misc;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import prog2.misc.SnakeMatrixIterator;
 
 import static org.junit.jupiter.api.Assertions.*;
 

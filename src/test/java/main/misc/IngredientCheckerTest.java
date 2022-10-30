@@ -11,9 +11,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static main.misc.IngredientChecker.BLACKLIST;
-import static main.misc.util.file2List;
-import static main.misc.util.showMatches;
+import static misc.IngredientChecker.BLACKLIST;
+import static misc.util.file2List;
+import static misc.util.showMatches;
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
@@ -26,7 +26,7 @@ class IngredientCheckerTest {
 	private String ingredients1;
 	private String ingredients2;
 	private String olaplex5;
-	private List<String> referenceList;
+	private List<? super String> referenceList;
 
 	@SuppressWarnings({"unchecked", "rawtypes", "SpellCheckingInspection"})
 	@BeforeEach

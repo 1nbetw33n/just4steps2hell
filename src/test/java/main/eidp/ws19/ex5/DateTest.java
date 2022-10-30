@@ -1,6 +1,6 @@
 package main.eidp.ws19.ex5;
 
-import main.misc.util;
+import eidp.ws19.ex5.Date;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,24 +9,35 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static misc.util.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 /*
  * Created by 0x1nbetw33n on 29/10/2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-class DateTest{
+class DateTest {
 
 	private List<?> leap_years;
 	private List<?> non_leap_years;
 	private List<? super Date> leap_dates;
 	private List<? super Date> non_leap_dates;
 
+	private final Date input_date1 = new Date(2018,10,7,16,30);
+	private final Date input_date2 = new Date(2018,12,31,23,59);
+	private final Date input_date3 = new Date(2020,2,28,23,59);
+	private final Date input_date4 = new Date(2021,2,28,23,59);
+
+	private final Date exp_date1 = new Date(2018,10,7,17,0);
+	private final Date exp_date2 = new Date(2019,1,1,0,1);
+	private final Date exp_date3 = new Date(2020,2,29,0,1);
+	private final Date exp_date4 = new Date(2021,3,1,0,1);
+
+
 	@BeforeEach
 	void setUp() throws IOException{
-		leap_years = util.read_csv("src/test/resources/date/leap_years.txt");
-		non_leap_years = util.read_csv("src/test/resources/date/non_leap_years.txt");
+		leap_years = csv2list("src/test/resources/date/leap_years.csv", "\n");
+		non_leap_years = csv2list("src/test/resources/date/non_leap_years.csv", "\n");
 		leap_dates = new ArrayList<>();
 		non_leap_dates = new ArrayList<>();
 		for (Object year : leap_years){
@@ -49,5 +60,17 @@ class DateTest{
 	void is_leap_year_test() {
 		leap_dates.forEach(date -> assertTrue(((Date) date).is_leap_year()));
 		non_leap_dates.forEach(date -> assertFalse(((Date) date).is_leap_year()));
+	}
+
+	@Test
+	void extend_date_test(){
+		input_date1.extend_date(30);
+		input_date2.extend_date(2);
+		input_date3.extend_date(2);
+		input_date4.extend_date(2);
+		assertTrue(input_date1.compare_date(exp_date1));
+		assertTrue(input_date2.compare_date(exp_date2));
+		assertTrue(input_date3.compare_date(exp_date3));
+		assertTrue(input_date4.compare_date(exp_date4));
 	}
 }

@@ -3,6 +3,10 @@ package main.prog2.exm_ss22;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import prog2.exm_ss22.Person;
+import prog2.exm_ss22.Schlange;
+import prog2.exm_ss22.Student;
+import prog2.exm_ss22.Util;
 
 import java.util.ArrayList;
 import java.util.Collection;

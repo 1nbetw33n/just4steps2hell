@@ -30,8 +30,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static main.c.ex4.No2.toBinaryString;
-import static main.c.ex4.No2.toBinaryString2;
+import static ex4.No2.toBinaryString;
+import static ex4.No2.toBinaryString2;
 import static org.junit.jupiter.api.Assertions.*;
 /*
  * Created by 0x1nbetw33n on 27/05/2022
