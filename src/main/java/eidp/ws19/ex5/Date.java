@@ -42,7 +42,7 @@ package eidp.ws19.ex5;
 
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings("unused")
+
 public final class Date {
 
     private int year;
@@ -67,6 +67,7 @@ public final class Date {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
+    @SuppressWarnings("unused")
     public void print_date(){
         System.out.println(year +"\t" + month +"\t" + day +"\t" +hour +"\t" +minute + "\n");
     }

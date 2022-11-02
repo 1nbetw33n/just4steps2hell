@@ -1,0 +1,416 @@
+#ALWAYS USE SINGULAR AND PLURAL!!!
+#i.e.
+#paraben
+#parabenE
+#FROZEN INGREDIENTS: PROPYLENE GLYCOL REMOVED
+methicone
+methicon
+cone
+con
+conol
+col
+xane
+xan
+siloxane
+siloxan
+amodimethicone
+amodimethicon
+behenoxy dimethicone
+behenoxy dimethicon
+dimethicone
+dimethicon
+dimethiconol
+bisaminopropyl dimethicone
+bisaminopropyl dimethicon
+phenyl trimethicone
+phenyl trimethicon
+stearoxy dimethicone
+stearoxy dimethicon
+cetearyl methicone
+cetearyl methicon
+stearyl dimethicone
+stearyl dimethicon
+cetyl dimethicone
+cetyl dimethicon
+cyclopentasiloxane
+cyclopentasiloxan
+trimethylsilylamodimethicone
+trimethylsilylamodimethicon
+alkylbenzol sulfonat
+alkylbenzol sulfonate
+ammonium laureth sulfat
+ammonium laureth sulfate
+ammonium lauryl sulfat
+ammonium lauryl sulfate
+ammonium xylenesulfonat
+ammonium xylenesulfonate
+dioctyl natrium sulfosuccinat
+dioctyl natrium sulfosuccinate
+dioctyl sodium sulfosuccinate
+dioctyl sodium sulfosuccinat
+disodium laureth sulfosuccinate
+disodium laureth sulfosuccinat
+ethyl peg-15 cocamine sulfat
+ethyl peg-15 cocamine sulfate
+natrium laureth sulfate
+natrium laureth sulfat
+natrium laureth sulfoacetate
+natrium laureth sulfoacetat
+natrium lauryl sulfate
+natrium lauryl sulfat
+natrium lauryl sulfoacetate
+natrium lauryl sulfoacetat
+sodium laurel sulfate
+sodium laurel sulfat
+sodium lauryl sulfate
+sodium lauryl sulfat
+sodium laureth sulfate
+sodium laureth sulfat
+sodium cocoyl sarcosinate
+sodium cocoyl sarcosinat
+sodium lauryl sarcosinate
+sodium lauryl sarcosinat
+eth
+prop
+propyl
+propyle
+denaturierter alkohol
+denaturierter alkohole
+ethanol
+ethanole
+isopropanol
+isopropanole
+isopropyl alcohol
+isopropyl alcohole
+propanol
+propanole
+propyl alcohol
+propyl alcohole
+sd alcohol
+sd alcohole
+paraben
+parabene
+methylparabene
+methylparaben
+ethylparabene
+ethylparaben
+pentylparabene
+pentylparaben
+benzylparabene
+benzylparaben
+phenylparabene
+phenylparaben
+butylparabene
+butylparaben
+propylparabene
+propylparaben
+isopropylparabene
+isopropylparaben
+isobutylparabene
+isobutylparaben
+eugenol
+eugenole
+cinnamal
+cinnamale
+citral
+citrale
+limonene
+limonen
+coumarin
+coumarine
+citronellol
+citronellole
+farnesol
+farnesole
+linalool
+linaloole
+peg
+peg-8
+peg-15
+peg-32
+alumin
+alumina
+aluminium chloride
+aluminum chlorohydrate
+alcloxa
+aldioxa
+alaun
+aluminum hydroxide
+aluminium stearate
+aluminium powder
+cl77000
+cl 77000
+ci77002
+ci 77002
+benz
+oxybenzone
+butyl methoxydibenzoylmethane oxybenzone
+butyl methoxydibenzoylmethane oxybenzon
+4-methylbenzylidene camphor
+4-methylbenzylidene camphore
+3-benzylidene camphor
+benzophenone
+benzophenone-1
+benzophenon-1
+benzophenone-2
+benzophenon-2
+benzophenone-3
+benzophenon-3
+benzophenone-4
+benzophenon-4
+benzophenone-5
+benzophenon-5
+benzophenone-6
+benzophenon-6
+benzophenone-7
+benzophenon-7
+benzophenone-8
+benzophenon-8
+benzophenone-9
+benzophenon-9
+benzophenone-10
+benzophenon-10
+benzophenone-11
+benzophenon-11
+benzophenone-12
+benzophenon-12
+ethylhexyl dimethyl paba
+homosalate
+octocrylene
+phenylbenzimidazole sulfonic acid
+va/crotonates/methacryloxybenzophenone-1 copolymer
+bha
+butylhydroxyanisol
+e 320
+e320
+bht
+butylhydroxytoluol
+e321
+e 321
+ci 77163
+ci 18050
+ci 17200
+ci 19140
+ci 74260
+ci 12370
+ci 11680
+ci 15985
+ci77163
+ci18050
+ci17200
+ci19140
+ci74260
+ci12370
+ci11680
+ci15985
+bismuth oxychloride
+acid red 1
+acid red 33
+tartrazin
+pigment green 7
+pigment red 112
+pigment yellow 1
+red 33
+yellow 6
+borate
+borax
+boric acid
+mea-borate
+mipa-borate
+natriumtetraborate
+phenyl mercuric borate
+potassium borate
+sodium borate
+sodium perborate
+trioctyldodecyl borate
+zinc borate
+diazolidinyl urea
+dimethyl imidazolidinone
+dm hydantoin
+dmdm hydantoin
+benzisothiazolinone
+chlorhexidine
+chloroacetamide
+chlorphenesin
+climbazole
+dichlorobenzyl alcohol
+iodopropynyl butylcarbamate
+methylchloroisothiazolinone
+methylisothiazolinone
+quaternium-15
+quaternium-51
+triclocarban
+triclosan
+trifluoromethyl c1-4 alkyl dimethicone
+butylene glycol
+dipropylene glycol
+hexylene glycol
+methylpropanediol
+phenoxyethanol
+cera microcristallina
+ceresin
+microcrystalline wax
+mineral oil
+ozokerite
+paraffinum liquidum
+petrolatum
+imidazolidinyl urea
+mdm hydantoin
+methyldibromo glutaronitrile
+sodium hydroxymethyl glycinate
+sodium hydroxymethylglycinate
+triclosane
+sodium hydroxymethylglycinat
+hexamidine diisethionate
+hexamidine diisethionat
+2-bromo-2-nitropropane-1,3-diol
+5-bromo-5-nitro-1,3-dioxane
+quaterniume-15
+diethyl phthalate
+diethyl phthalat
+diethylhexyl phthalate
+diethylhexyl phthalat
+di-n-butylphthalate
+di-n-butylphthalat
+butyl benzyl phthalate (bbp)
+dibutyl phthalate (dbp)
+diethylhexyl phthalate (dehp)
+diethyl phthalate (dep)
+dimethyl phthalate (dmp)
+dioctyl phthalate (dop)
+butyl benzyl phthalate
+dibutyl phthalate
+dimethyl phthalate
+dioctyl phthalate
+bbp
+dbp
+dehp
+dep
+dmp
+dop
+cycloethoxymethicone
+cyclohexasiloxane
+cyclomethicone
+polysiloxane
+simethicone
+trimethylsiloxysilicate
+propylen glycol
+propylen glycole
+1,2-propanediol
+1,2-propanediole
+1,2-dihydroxypropane
+1,2-dihydroxypropan
+methyl ethyl glycol
+methyl ethyl glycole
+meg
+methylethylene glycol
+methylethylene glycole
+mineral öl
+mineralöl
+paraffinum subliquidum
+ozokerit
+vaseline
+vaselin
+ppg
+ceteareth-8
+cetearethe-8
+polyethylenglykol
+polyethylenglykole
+sodium-myreth-sulfat
+sodium-myreth-sulfate
+ammonium-lauryl-sulfat
+ammonium-lauryl-sulfate
+sodium-laureth-sulfat
+sodium laureth sulfat
+sodium laureth sulfate
+sodium-laureth-sulfate
+sodium-lauryl-sulfat
+sodium-lauryl-sulfate
+butylphenyl methylpropional
+propanal
+2,4-dimethyl-3-cyclohexene carboxaldehyde
+hydroxyisohexyl 3-cyclohexene carboxaldehyde
+evernia furfuracea extract
+evernia prunastri extract
+hydroxycitronellal
+isoeugenol
+cinnamyl alcohol
+alkyl alcohol
+butyl stearate
+cetearyl alcohol/ceteareth 20
+cetoleth-20
+cetyl esters
+d&c red 17
+d&c red 19
+d&c red 2
+d&c red 21
+d&c red 27
+d&c red 3
+d&c red 30
+d&c red 33
+d&c red 36
+d&c red 4
+d&c red 40
+d&c red 6
+d&c red 7
+d&c red 9
+dioctyl succinate
+disodium oleamido peg-2 sulfosuccinate
+emulsifying wax
+laureth-23
+laureth-4
+myreth-3 myristate
+oleic acid
+oleth-10
+oleth-3
+oleth-3 phosphate
+oleth-5
+peg-100 distearate
+peg-150 distearate
+peg-16 lanolin
+peg-200 dilaurate
+peg-400
+pix ex carbone
+polyethylene glycol
+ppg-10 cetyl ether
+ppg-12 peg-65 lanolin oil
+ppg-2 myristyl propionate
+ppg-5 ceteth-10 phosphate
+propylene glycol dicaprylate/dicaprate
+dicaprylate/dicaprate
+propylene glycol dipelargonate
+propylene glycol stearate
+steareth-10
+steareth-2
+steareth-20
+tea-stearate
+xylene
+hydrolyzed vegetable protein pg-propyl silanetriol
+c12-13 pareth-3
+c12-13 pareth-23
+trideceth-12
+laureth-9
+c11-15 pareth-7
+quaternium-95
+peg-8/smdi copolymer
+peg-120 methyl glucose dioleate
+methyl gluceth-20
+glycereth-26
+tartrazine
+fd&c yellow 6
+polyquaternium-16
+cetyl peg/ppg-10/1 dimethicone
+c12-15 pareth-12
+peg-7 glyceryl cocoate
+Isohexadecane
+C13-14 Isoparaffin
+Solvent Green 3
+Myrtrimonium Bromide
+CI 19140/Yellow 5 Lake
+CI 45380/Red 22 Lake
+CI 15850/Red 7
+CI 45410/Red 28 Lake
+Paraffin
+Isododecane
+Etidronic Acid
+Isobutane

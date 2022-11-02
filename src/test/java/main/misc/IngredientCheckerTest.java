@@ -26,14 +26,13 @@ class IngredientCheckerTest {
 	private @Nullable String olaplex5;
 	private @Nullable List<? super String> referenceList;
 
-	@SuppressWarnings({"unchecked", "rawtypes", "SpellCheckingInspection"})
 	@BeforeEach
 	void setUp() {
 		ingredients0 = "src/test/resources/ingredient_checker/ingredientsTest0_file2List.txt";
 		ingredients1 = "src/test/resources/ingredient_checker/ingredientsTest1_file2List.txt";
 		ingredients2 = "src/test/resources/ingredient_checker/ingredientsTest2_file2List.txt";
 		olaplex5 = "src/test/resources/ingredient_checker/OLAPLEX5.txt";
-		referenceList = new ArrayList();
+		referenceList = new ArrayList<>();
 		referenceList.add("aplha");
 		referenceList.add("beta");
 		referenceList.add("gamma");

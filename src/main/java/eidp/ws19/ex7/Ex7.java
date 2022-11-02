@@ -56,13 +56,12 @@ final class exercise7{
         return reverse_slice;
     }
 
-    private static int[] reverse_slice(final int @NotNull [] slice){
+    private static void reverse_slice(final int @NotNull [] slice){
         for(int i = 0, tmp, len = slice.length; i < len / 2; i++){
             tmp = slice[i];
             slice[i] = slice[len - i - 1];
             slice[len - i - 1] = tmp;
         }
-        return slice;
     }
 
     private static int[] concat_slices(final int @NotNull [] slice1, final int @NotNull [] slice2){
@@ -87,7 +86,7 @@ final class exercise7{
         final int[] reverse_slice = get_reverse_slice(slice);
         assert Arrays.equals(reverse_slice, new int[]{2, 3, 4, 2, 2, 1});
         assert !Arrays.equals(reverse_slice, new int[]{2, 3, 4, 3, 2, 1});
-        slice = reverse_slice(slice);
+        reverse_slice(slice);
         assert Arrays.equals(slice, new int[]{2, 3, 4, 2, 2, 1});
         final int[] slice1 = {1, 2, 3};
         final int[] slice2 = {4, 5, 6};

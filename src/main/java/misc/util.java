@@ -39,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @SuppressWarnings("unused")
 public final class util {
@@ -114,7 +115,7 @@ public final class util {
     public static final String CYAN_BACKGROUND_BRIGHT = "\033[0;106m";  // CYAN
     public static final String WHITE_BACKGROUND_BRIGHT = "\033[0;107m";   // WHITE
 
-    public static void println(final String text){
+    public static void println(final Object text){
         System.out.println("\t" + text);
     }
 
@@ -122,59 +123,56 @@ public final class util {
         list.forEach(System.out::println);
     }
 
-    public static void print_green(final String text) {
-        System.out.println("\t" + GREEN + text + RESET);
+    public static void print_green(final Object text) {
+        System.out.println("\t" + GREEN_BOLD_BRIGHT + text + RESET);
     }
 
-    public static void print_red(final String text) {
-        System.out.println("\t" + RED + text + RESET);
+    public static void print_red(final Object text) {
+        System.out.println("\t" + RED_BOLD_BRIGHT + text + RESET);
     }
 
     public static void all_tests_passed(){
-        System.out.println(GREEN + "\n\n\t\uD83D\uDCD7\tall tests passed!:)\t\uD83D\uDCD7\n" + RESET);
+        System.out.println(GREEN_BOLD_BRIGHT + "\n\n\t\uD83D\uDCD7\tall tests passed!:)\t\uD83D\uDCD7\n" + RESET);
     }
 
-    @SuppressWarnings("SuspiciousMethodCalls")
-    public static @NotNull List<? extends String> file2List(@NotNull final String PATH) throws IOException {
-        @SuppressWarnings("resource")
-        List<? extends String> list = Files
-                .lines(Paths.get(PATH))
-                .map(String::toLowerCase)
-                .collect(Collectors.toList());
-        //removes empty lines
-        list.removeAll(Collections.singleton(""));
-        return list;
+    public static @NotNull List<? extends String> file2List(@NotNull final String path) throws IOException {
+        try (Stream<? extends String> lines = Files.lines(Paths.get(path))) {
+            return lines
+                    .map(String::toLowerCase)
+                    .collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 
-    @SuppressWarnings("SuspiciousMethodCalls")
     public static @NotNull List<? extends String> file2List(@NotNull final String path, final int skip_lines) throws IOException {
-        @SuppressWarnings("resource")
-        List<? extends String> list = Files
-                .lines(Paths.get(path))
-                .skip(skip_lines)
-                .map(String::toLowerCase)
-                .collect(Collectors.toList());
-        //removes empty lines
-        list.removeAll(Collections.singleton(""));
-        return list;
+        try (Stream<? extends String> lines = Files.lines(Paths.get(path))) {
+            return lines
+                    .skip(skip_lines)
+                    .map(String::toLowerCase)
+                    .collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 
     /*
     gets the path of the file, that contains the keywords we want to search for
     - then using file2List()
     - then checks for each keyword if the keyword has a match on BLACKLIST
-    IF a string in TXT is on BLACKLIST, then it is added to matches
+    IF a string in the file is on BLACKLIST, then it is added to matches
     RETURNS a list with all the strings that got a match OR a list containing only the string  'safe to use:)' if there are no matching strings
      */
-    public static @NotNull List<? super String> showMatches(@NotNull final String TXT, @NotNull final List<? extends String> BLACKLIST) throws IOException {
+    public static @NotNull List<? super String> showMatches(@NotNull final String path, @NotNull final List<? extends String> BLACKLIST) throws IOException {
         List<? super String> matches = new ArrayList<>();
-        List<? extends String> ingredients = file2List(TXT);
+        List<? extends String> ingredients = file2List(path);
         for (String ingredient : ingredients) {
             if (BLACKLIST.stream().anyMatch(ingredient::contentEquals)){
                 matches.add(ingredient);
             }
         }
-        matches.forEach(System.out::println);
         return matches.isEmpty() ? new ArrayList<>(Collections.singleton("safe to use:)")) : matches;
     }
 
