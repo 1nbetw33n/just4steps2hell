@@ -115,26 +115,51 @@ public final class util {
     public static final String CYAN_BACKGROUND_BRIGHT = "\033[0;106m";  // CYAN
     public static final String WHITE_BACKGROUND_BRIGHT = "\033[0;107m";   // WHITE
 
+    /**
+     Same stuff as System.out.println() but with shorter name
+     * @param text the text to be printed
+     */
     public static void println(final Object text){
         System.out.println("\t" + text);
     }
 
+    /**
+     Brief method to print a list that can contain any type of object
+     * @param list the list to be printed (the list can be of any type)
+     */
     public static void print_list(final @NotNull List<?> list){
         list.forEach(System.out::println);
     }
 
+    /**
+     Same stuff as println() but with green color
+     * @param text the text to be printed
+     */
     public static void print_green(final Object text) {
         System.out.println("\t" + GREEN_BOLD_BRIGHT + text + RESET);
     }
 
+    /**
+     Same stuff as println() but with red color
+     * @param text the text to be printed
+     */
     public static void print_red(final Object text) {
         System.out.println("\t" + RED_BOLD_BRIGHT + text + RESET);
     }
 
+    /**
+     Simply prints a message saying {@code "all tests passed"}
+     */
     public static void all_tests_passed(){
         System.out.println(GREEN_BOLD_BRIGHT + "\n\n\t\uD83D\uDCD7\tall tests passed!:)\t\uD83D\uDCD7\n" + RESET);
     }
 
+    /**
+     Reads a file (e.g. a text file) and returns a list of strings with each string representing a line in the file
+     * @param path the path to the file
+     * @return the content of the file as a list of strings
+     * @throws IOException if the file is not found
+     */
     public static @NotNull List<? extends String> file2List(@NotNull final String path) throws IOException {
         try (Stream<? extends String> lines = Files.lines(Paths.get(path))) {
             return lines
@@ -146,6 +171,13 @@ public final class util {
         }
     }
 
+    /**
+     Reads a file (e.g. a text file) and returns a list of strings with each string representing a line in the file
+     * @param path the path to the file
+     * @param skip_lines the number of lines to skip at the beginning of the file
+     * @return the content of the file as a list of strings
+     * @throws IOException if the file is not found
+     */
     public static @NotNull List<? extends String> file2List(@NotNull final String path, final int skip_lines) throws IOException {
         try (Stream<? extends String> lines = Files.lines(Paths.get(path))) {
             return lines
@@ -158,25 +190,42 @@ public final class util {
         }
     }
 
-    /*
-    gets the path of the file, that contains the keywords we want to search for
-    - then using file2List()
-    - then checks for each keyword if the keyword has a match on BLACKLIST
-    IF a string in the file is on BLACKLIST, then it is added to matches
-    RETURNS a list with all the strings that got a match OR a list containing only the string  'safe to use:)' if there are no matching strings
+    /**
+     Gets the path of the file, that contains the keywords we want to search for.
+     * <ul>
+     *     <li>(1) then calling file2List()</li>
+     *     <li>(2) then checks for each keyword if the keyword has a match on blacklist</li>
+     * </ul>
+     * IF a string in the file is on blacklist, then it is added to matches.
+     * <p>
+     * @param path path to the file that contains the ingredients
+     * @param blacklist list of keywords we want to filter the ingredients for
+     * @return
+     * <ul>
+     *     <li>(1) a list with all the strings that got a match</li>
+     *     OR
+     *     <li>(2) a list containing only the string  'safe to use:)' if there are no matching strings</li>
+     * </ul>
+     * @throws IOException if the file is not found
      */
-    public static @NotNull List<? super String> showMatches(@NotNull final String path, @NotNull final List<? extends String> BLACKLIST) throws IOException {
+    public static @NotNull List<? super String> showMatches(@NotNull final String path, @NotNull final List<? extends String> blacklist) throws IOException {
         List<? super String> matches = new ArrayList<>();
         List<? extends String> ingredients = file2List(path);
         for (String ingredient : ingredients) {
-            if (BLACKLIST.stream().anyMatch(ingredient::contentEquals)){
+            if (blacklist.stream().anyMatch(ingredient::contentEquals)){
                 matches.add(ingredient);
             }
         }
         return matches.isEmpty() ? new ArrayList<>(Collections.singleton("safe to use:)")) : matches;
     }
 
-    //read content of csv file into a list of ints with newline as separator
+    /**
+     Reads the content of a csv file into a list of strings.
+     * @param path path to the file that contains the ingredients
+     * @param regex regex that is used to split the strings (e.g. "," or "\n" or ... for csv files)
+     * @return a List of Integers from the csv file
+     * @throws IOException if the file is not found
+     */
     public static @NotNull List<? super Integer> csv2list(final @NotNull String path, final @NotNull String regex) throws IOException {
         List<? super Integer> list = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(path));

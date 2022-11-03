@@ -51,6 +51,14 @@ public final class Date {
     private int hour;
     private int minute;
 
+    /**
+     Creates a new date object
+     * @param year year
+     * @param month month
+     * @param day day
+     * @param hour hour
+     * @param minute minute
+     */
     public Date(int year, int month, int day, int hour, int minute){
         if (!((1600 <= year && year <= 3000) || (1 <= month && month <= 12) || (1 <= day && day <= 31) || (0 <= hour && hour <= 23) || (0 <= minute && minute <= 59))){
             throw new IllegalArgumentException("Invalid date");
@@ -63,19 +71,39 @@ public final class Date {
         }
     }
 
+    /**
+     * .
+     * <p>
+     * checks if the date is a leap year
+     * @return true if the date is a leap year
+     */
     public boolean is_leap_year(){
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
+    /**
+     Prints the date in the format "year month day hour minute"
+     */
     @SuppressWarnings("unused")
     public void print_date(){
         System.out.println(year +"\t" + month +"\t" + day +"\t" +hour +"\t" +minute + "\n");
     }
 
+    /**
+     * Compare two dates for equality
+     * @param date the date to compare to
+     * @return true if the dates are equal
+     */
     public boolean compare_date(@NotNull Date date){
         return (year == date.year && month == date.month && day == date.day && hour == date.hour && minute == date.minute);
     }
 
+    /**
+     * .
+     * <p>
+     * extends the date by the given amount of minutes and prints the new date
+     * @param added_minutes the amount of minutes to add
+     */
     public void extend_date(int added_minutes) {
         if (!(0 <= added_minutes && added_minutes <= 40000)) {
             throw new IllegalArgumentException("Invalid minutes");

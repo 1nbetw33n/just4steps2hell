@@ -4,6 +4,7 @@ import eidp.ws19.ex5.Date;
 import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -58,13 +59,16 @@ class DateTest {
 		non_leap_dates = null;
 	}
 
+
 	@Test
+	@DisplayName("Test if leap years are correctly identified")
 	void is_leap_year_test() {
 		Objects.requireNonNull(leap_dates).forEach(date -> assertTrue(((Date) date).is_leap_year()));
 		Objects.requireNonNull(non_leap_dates).forEach(date -> assertFalse(((Date) date).is_leap_year()));
 	}
 
 	@Test
+	@DisplayName("Test if dates are correctly extended")
 	void extend_date_test(){
 		input_date1.extend_date(30);
 		input_date2.extend_date(2);

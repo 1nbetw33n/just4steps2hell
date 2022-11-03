@@ -35,6 +35,12 @@ import java.util.Scanner;
 @SuppressWarnings("unused")
 class Ex5 {
 
+	/**
+	 Swaps i and j
+	 * @param i first number
+	 * @param j second number
+	 * @return swapped numbers
+	 */
 	@SuppressWarnings("unused")
 	private static int[] swap (int i, int j){
 		if( !(i < j)) {
@@ -44,7 +50,10 @@ class Ex5 {
 		}
 	}
 
-
+	/**
+	 Approximates pi
+	 * @return approximated pi
+	 */
 	@SuppressWarnings("unused")
 	private static double approx_for_pi_1(){
 		int i = 0;
@@ -57,6 +66,12 @@ class Ex5 {
 		return res;
 	}
 
+	/**
+	 Performs the caesar cypher
+	 * @param k	amount of characters shifted
+	 * @param c character to be shifted
+	 * @return shifted character
+	 */
 	private static char caesar_cypher(int k, char c){
 		char ch = Character.isUpperCase(c) ? 'A' : 'a';
 		if (Character.isAlphabetic(c)){
@@ -66,6 +81,12 @@ class Ex5 {
 		}
 	}
 
+	/**
+	 Performs the caesar cypher with a string
+	 * @param k amount of characters shifted
+	 * @param s string to be shifted
+	 * @return shifted string
+	 */
 	@SuppressWarnings("SameParameterValue")
 	private static @NotNull String caesar_encrypt(int k, @NotNull String s){
 		char[] c = s.toCharArray();
@@ -76,6 +97,11 @@ class Ex5 {
 		return sb.toString();
 	}
 
+	/**
+	 Calculates breading behaviour of rats
+	 * @param n number of months
+	 * @return number of rats
+	 */
 	private static int fucking_rats(int n){
 		int rats = 2;
 		while (n >0){
@@ -85,6 +111,11 @@ class Ex5 {
 		return rats;
 	}
 
+	/**
+	 Counts the length of a chain
+	 * @param chain chain to be counted
+	 * @return length of the chain
+	 */
 	static int count_chain(@NotNull String chain){
 		int longest = 0;
 		int current = 1;
@@ -101,6 +132,10 @@ class Ex5 {
 		return longest;
 	}
 
+	/**
+	 Calculates the longest chain
+	 * @return longest chain
+	 */
 	static int longest_chain(){
 		StringBuilder chain = new StringBuilder();
 		Scanner sc = new Scanner(System.in);
