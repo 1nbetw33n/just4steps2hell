@@ -30,6 +30,11 @@ package eidp.ws19.ex3;
 
 public class Parity_Bit {
 
+	/**
+	 * Performs a check if the given parity bit is valid
+	 * @param no the parity bit that is checked for validity
+	 * @return if parity bit is valid
+	 */
 	static boolean parity_bit_is_valid(int no){
 		int count = 0;
 		while(no > 0){

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static misc.util.*;
+import static misc.Util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
@@ -21,8 +21,8 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class DateTest {
 
-	private @Nullable List<?> leap_years;
-	private @Nullable List<?> non_leap_years;
+	private @Nullable Iterable<?> leap_years;
+	private @Nullable Iterable<?> non_leap_years;
 	private @Nullable List<? super Date> leap_dates;
 	private @Nullable List<? super Date> non_leap_dates;
 

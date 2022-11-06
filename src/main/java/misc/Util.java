@@ -42,7 +42,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @SuppressWarnings("unused")
-public final class util {
+public final class Util {
 
     public static final String RESET = "\033[0m";  // Text Reset
 
@@ -124,11 +124,11 @@ public final class util {
     }
 
     /**
-     Brief method to print a list that can contain any type of object
-     * @param list the list to be printed (the list can be of any type)
+     Brief method to print an iterable elementwise
+     * @param iterable the iterable to be printed (the iterable can be of any type)
      */
-    public static void print_list(final @NotNull List<?> list){
-        list.forEach(System.out::println);
+    public static void print_iterable(final @NotNull Iterable<?> iterable){
+        iterable.forEach(System.out::println);
     }
 
     /**
@@ -141,7 +141,7 @@ public final class util {
 
     /**
      Same stuff as println() but with red color
-     * @param text the text to be printed
+     * @param text the text to be printed (can be anything)
      */
     public static void print_red(final Object text) {
         System.out.println("\t" + RED_BOLD_BRIGHT + text + RESET);
@@ -203,14 +203,16 @@ public final class util {
      * @return
      * <ul>
      *     <li>(1) a list with all the strings that got a match</li>
+     *     <p></p>
      *     OR
+     *     <p></p>
      *     <li>(2) a list containing only the string  'safe to use:)' if there are no matching strings</li>
      * </ul>
      * @throws IOException if the file is not found
      */
-    public static @NotNull List<? super String> showMatches(@NotNull final String path, @NotNull final List<? extends String> blacklist) throws IOException {
+    public static @NotNull Iterable<? super String> showMatches(@NotNull final String path, @NotNull final List<? extends String> blacklist) throws IOException {
         List<? super String> matches = new ArrayList<>();
-        List<? extends String> ingredients = file2List(path);
+        Iterable<? extends String> ingredients = file2List(path);
         for (String ingredient : ingredients) {
             if (blacklist.stream().anyMatch(ingredient::contentEquals)){
                 matches.add(ingredient);
@@ -222,13 +224,14 @@ public final class util {
     /**
      Reads the content of a csv file into a list of strings.
      * @param path path to the file that contains the ingredients
-     * @param regex regex that is used to split the strings (e.g. "," or "\n" or ... for csv files)
+     * @param regex regex that is used to split the strings
+     *              <p>(ex. "," or "\n" or ... for csv files)
      * @return a List of Integers from the csv file
      * @throws IOException if the file is not found
      */
-    public static @NotNull List<? super Integer> csv2list(final @NotNull String path, final @NotNull String regex) throws IOException {
+    public static @NotNull Iterable<? super Integer> csv2list(final @NotNull String path, final @NotNull String regex) throws IOException {
         List<? super Integer> list = new ArrayList<>();
-        BufferedReader br = new BufferedReader(new FileReader(path));
+        var br = new BufferedReader(new FileReader(path));
         String line;
         while ((line = br.readLine()) != null) {
             String[] values = line.split(regex);
@@ -238,7 +241,5 @@ public final class util {
         }
         return list;
     }
-
-
 
 }

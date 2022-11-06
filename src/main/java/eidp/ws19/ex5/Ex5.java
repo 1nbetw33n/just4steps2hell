@@ -36,7 +36,7 @@ import java.util.Scanner;
 class Ex5 {
 
 	/**
-	 Swaps i and j
+	 * Swaps i and j
 	 * @param i first number
 	 * @param j second number
 	 * @return swapped numbers
@@ -51,14 +51,14 @@ class Ex5 {
 	}
 
 	/**
-	 Approximates pi
+	 * Approximates pi
 	 * @return approximated pi
 	 */
 	@SuppressWarnings("unused")
 	private static double approx_for_pi_1(){
-		int i = 0;
-		int alter = 1;
-		double res = 0.;
+		var i = 0;
+		var alter = 1;
+		var res = 0.;
 		while (i < 10000) {
 			res += alter / (2. * i++ + 1.);
 			alter *= -1;
@@ -73,7 +73,7 @@ class Ex5 {
 	 * @return shifted character
 	 */
 	private static char caesar_cypher(int k, char c){
-		char ch = Character.isUpperCase(c) ? 'A' : 'a';
+		var ch = Character.isUpperCase(c) ? 'A' : 'a';
 		if (Character.isAlphabetic(c)){
 			return (char)(((c - ch + k) % 26) + ch);
 		} else {
@@ -82,7 +82,7 @@ class Ex5 {
 	}
 
 	/**
-	 Performs the caesar cypher with a string
+	 * Performs the caesar cypher with a string
 	 * @param k amount of characters shifted
 	 * @param s string to be shifted
 	 * @return shifted string
@@ -98,12 +98,12 @@ class Ex5 {
 	}
 
 	/**
-	 Calculates breading behaviour of rats
+	 * Calculates breading behaviour of rats
 	 * @param n number of months
 	 * @return number of rats
 	 */
 	private static int fucking_rats(int n){
-		int rats = 2;
+		var rats = 2;
 		while (n >0){
 			rats *= 7;
 			n -= 2;
@@ -112,13 +112,13 @@ class Ex5 {
 	}
 
 	/**
-	 Counts the length of a chain
+	 * Counts the length of a chain
 	 * @param chain chain to be counted
 	 * @return length of the chain
 	 */
 	static int count_chain(@NotNull String chain){
-		int longest = 0;
-		int current = 1;
+		var longest = 0;
+		var current = 1;
 		for (int i = 1; i < chain.length(); i++){
 			if(chain.charAt(i) == chain.charAt(i - 1)){
 				current++;
@@ -133,7 +133,7 @@ class Ex5 {
 	}
 
 	/**
-	 Calculates the longest chain
+	 * Calculates the longest chain
 	 * @return longest chain
 	 */
 	static int longest_chain(){

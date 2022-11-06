@@ -30,11 +30,18 @@ package misc;
 @SuppressWarnings("SameParameterValue")
 final class InterestCalculator {
 
+    /**
+     * Calculates the compounded interest for a given amount of money {@code amount}, a given annual interest rate {@code interestRate} and a given number of years {@code years}.
+     * @param total_amount the total amount of money
+     * @param annual_interest_rate the annual interest rate
+     * @param annual_repayment_rate the annual repayment rate
+     * @return the compounded interest
+     */
     @SuppressWarnings("unused")
-    private static double calculateInterest(final double TOTAL_AMOUNT, final double ANNUAL_INTEREST_RATE, final double ANNUAL_REPAYMENT_RATE){
-        double annualInterestRatePercentage = ANNUAL_INTEREST_RATE / 100;
-        double annualRepaymentAmount = TOTAL_AMOUNT * ANNUAL_REPAYMENT_RATE / 100;
-        double remainingAmount = TOTAL_AMOUNT;
+    private static double calculateInterest(final double total_amount, final double annual_interest_rate, final double annual_repayment_rate){
+        double annualInterestRatePercentage = annual_interest_rate / 100;
+        double annualRepaymentAmount = total_amount * annual_repayment_rate / 100;
+        double remainingAmount = total_amount;
         double compoundedInterest = 0.;
         int yearCounter = 0;
         while (remainingAmount > 0.001) {
@@ -48,13 +55,20 @@ final class InterestCalculator {
         return compoundedInterest;
     }
 
+    /**
+     * Calculates the compounded interest for a given annual interest rate {@code annualInterestRate}, a given investment amount {@code investmentAmount} and a given number of years {@code investment_horizon}.
+     * @param annual_interest_rate the annual interest rate
+     * @param investement amount the investment amount
+     * @param investment_horizon the investment horizon
+     * @return the compounded interest
+     */
     @SuppressWarnings({"SameParameterValue", "unused"})
-    private static double calculateCompoundedInterest(final double ANNUAL_INTEREST_RATE , final double INVESTMENT, final int INVESTMENT_HORIZON) {
+    private static double calculateCompoundedInterest(final double annual_interest_rate , final double investement, final int investment_horizon) {
         int yearCounter = 0;
-        double compoundedInterest = INVESTMENT;
-        while(yearCounter < INVESTMENT_HORIZON) {
+        double compoundedInterest = investement;
+        while(yearCounter < investment_horizon) {
             yearCounter++;
-            compoundedInterest *= ANNUAL_INTEREST_RATE;
+            compoundedInterest *= annual_interest_rate;
         }
         return compoundedInterest;
     }

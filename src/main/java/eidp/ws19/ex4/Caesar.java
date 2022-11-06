@@ -30,6 +30,11 @@ package eidp.ws19.ex4;
 
 public class Caesar {
 
+	/**
+	 * Encrypts a string with the caesar cipher and prints the result
+	 * @param k number of shifts
+	 * @param c the char to shift
+	 */
 	@SuppressWarnings("SameParameterValue")
 	private static void caesar_cypher(int k, char c){
 		char ch = Character.isUpperCase(c) ? 'A' : 'a';

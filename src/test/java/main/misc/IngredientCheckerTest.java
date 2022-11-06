@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.util.*;
 
 import static misc.IngredientChecker.BLACKLIST;
-import static misc.util.file2List;
-import static misc.util.showMatches;
+import static misc.Util.file2List;
+import static misc.Util.showMatches;
 import static org.junit.jupiter.api.Assertions.*;
 
 /*

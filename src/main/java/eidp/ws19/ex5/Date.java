@@ -72,9 +72,7 @@ public final class Date {
     }
 
     /**
-     * .
-     * <p>
-     * checks if the date is a leap year
+     Checks if the date is a leap year
      * @return true if the date is a leap year
      */
     public boolean is_leap_year(){
@@ -99,9 +97,7 @@ public final class Date {
     }
 
     /**
-     * .
-     * <p>
-     * extends the date by the given amount of minutes and prints the new date
+     Extends the date by the given amount of minutes and prints the new date
      * @param added_minutes the amount of minutes to add
      */
     public void extend_date(int added_minutes) {

@@ -32,6 +32,12 @@ import org.jetbrains.annotations.NotNull;
 
 public class Substring {
 
+	/**
+	 * Returns the substring of a string from position of param c (exclusive) to the end of the string (inclusive).
+	 * @param c the character to start the substring from
+	 * @param s the string to get the substring from
+	 * @throws IllegalArgumentException if c is not in s
+	 */
 	@SuppressWarnings("SameParameterValue")
 	static void get_sub_string(char c, @NotNull String s){
 		if (s.contains(String.valueOf(c))){

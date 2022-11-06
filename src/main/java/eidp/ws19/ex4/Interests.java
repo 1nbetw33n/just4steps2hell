@@ -44,11 +44,12 @@ import org.jetbrains.annotations.NotNull;
 
 public class Interests {
 
-	/*
-	k0 = initial investment
-	p = interest rate
-	n = number of years
-	m = number of interests / year
+	/**
+	 * Calculates the interest of an investment
+	 * @param k0 initial investment
+	 * @param p interest rate
+	 * @param n number of years
+	 * @param m number of interests per year
 	 */
 	static void calc_interest(double k0, double p, double n, double m){
 		double i = p/100;

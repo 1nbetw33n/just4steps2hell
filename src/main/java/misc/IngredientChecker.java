@@ -31,7 +31,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static misc.util.*;
+import static misc.Util.*;
 
 public class IngredientChecker {
 
@@ -54,7 +54,7 @@ public class IngredientChecker {
     }
 
     public static void main(String[] args) throws IOException {
-        print_list(showMatches("src/test/resources/ingredient_checker/ingredients.txt", BLACKLIST));
+        print_iterable(showMatches("src/test/resources/ingredient_checker/ingredients.txt", BLACKLIST));
     }
 
 }

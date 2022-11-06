@@ -28,12 +28,12 @@ package eidp.ws19.ex7;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
-import misc.util;
+import misc.Util;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 
-import static misc.util.all_tests_passed;
+import static misc.Util.all_tests_passed;
 
 final class exercise7{
 
@@ -99,18 +99,18 @@ final class exercise7{
         final int[] b= new int[]{1, 2, 3, 4, 5, 7};
         assert a != b;
         assert !Arrays.equals(a, b);
-        util.println("\ta:\t" + Arrays.toString(a));
-        util.println("\tb:\t" + Arrays.toString(b));
-        util.println("reference a:\t" + a.toString());
-        util.println("reference b:\t" + b.toString());
+        Util.println("\ta:\t" + Arrays.toString(a));
+        Util.println("\tb:\t" + Arrays.toString(b));
+        Util.println("reference a:\t" + a.toString());
+        Util.println("reference b:\t" + b.toString());
         System.arraycopy(b, 0, a, 0, a.length);
         assert Arrays.equals(a, b);
         assert a != b;
-        util.print_red("proof that I can mutate the contents of a final assigned array, but not the reference");
-        util.print_red("\ta:\t" + Arrays.toString(a));
-        util.print_red("\tb:\t" + Arrays.toString(b));
-        util.println("reference a:\t" + a.toString());
-        util.println("reference b:\t" + b.toString());
+        Util.print_red("proof that I can mutate the contents of a final assigned array, but not the reference");
+        Util.print_red("\ta:\t" + Arrays.toString(a));
+        Util.print_red("\tb:\t" + Arrays.toString(b));
+        Util.println("reference a:\t" + a.toString());
+        Util.println("reference b:\t" + b.toString());
     }
 
 }
