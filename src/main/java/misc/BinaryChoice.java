@@ -38,7 +38,7 @@ final class BinaryChoice {
     private static final Random random = new Random();
 
     /**
-     * Everytime I'm forced to decide between the binary options of "Frau" and "Mann" I'm going to use this method to roll a metaphorical dice.
+     * Everytime I'm forced to decide between the binary options of "Frau" and "Herr" I'm going to use this method to roll a metaphorical dice.
      * @return "Frau" or "Herr"
      */
     private static @NotNull String getRandomBinaryChoice() {
