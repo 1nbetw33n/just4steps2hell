@@ -35,7 +35,7 @@ import java.util.Arrays;
 
 import static misc.Util.all_tests_passed;
 
-final class exercise7{
+final class Ex7{
 
     private static int count_occurrences(final int @NotNull [] slice, final int n){
         int count  = 0;
