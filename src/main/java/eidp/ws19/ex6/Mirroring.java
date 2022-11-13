@@ -35,6 +35,8 @@
 
 package eidp.ws19.ex6;
 
+import org.jetbrains.annotations.Contract;
+
 import static misc.Util.all_tests_passed;
 import static misc.Util.println;
 
@@ -49,6 +51,7 @@ final class Mirroring {
 	 * @param no the number to mirror.
 	 * @return the mirrored number.
 	 */
+	@Contract(pure = true)
 	public static int mirroring(int no){
 		var result = 0;
 		while(no != 0){
@@ -63,6 +66,7 @@ final class Mirroring {
 	 * @param no the nuumber on which the mirroring number is added.
 	 * @return the original number plus the mirrored number.
 	 */
+	@Contract(pure = true)
 	public static int mirror_add(int no){
 		return no + mirroring(no);
 	}
@@ -72,11 +76,12 @@ final class Mirroring {
 	 * @param no the number to check.
 	 * @return true if the number is a palindrome, false otherwise.
 	 */
+	@Contract(pure = true)
 	public static boolean is_palindrome(int no){
 		return no == mirroring(no);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String... args) {
 		assert mirroring(1234) == 4321;
 		assert mirroring(12322) != 12322;
 		assert mirror_add(1234) == 1234 + 4321;
