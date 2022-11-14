@@ -81,7 +81,7 @@ final class Mirroring {
 		return no == mirroring(no);
 	}
 
-	public static void main(String... args) {
+	public static void main(final String... args) {
 		assert mirroring(1234) == 4321;
 		assert mirroring(12322) != 12322;
 		assert mirror_add(1234) == 1234 + 4321;
@@ -102,4 +102,5 @@ final class Mirroring {
 		println(no);
 
 	}
+
 }
