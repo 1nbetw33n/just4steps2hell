@@ -43,7 +43,7 @@ import org.jetbrains.annotations.NotNull;
  * Created by 0x1nbetw33n on 12. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-final class Mirroring {
+public final class Mirroring {
 
 
         /**
@@ -60,7 +60,7 @@ final class Mirroring {
          * @param <E> The type of the stack.
          * @return The mirrored stack.
          */
-        static <E> @NotNull Stack<E> mirroring(final @NotNull Stack<E> stack) {
+        public static <E> @NotNull Stack<E> mirroring(final @NotNull Stack<E> stack) {
                 final Stack<E> mirror = new Stack<>();
                 while (!stack.is_empty()) {
                         mirror.push(stack.pop());

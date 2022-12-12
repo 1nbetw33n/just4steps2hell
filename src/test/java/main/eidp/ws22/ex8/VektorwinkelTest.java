@@ -34,7 +34,7 @@
  * -will be extended if necessary-
  */
 
-package eidp.ws22.ex8;
+package main.eidp.ws22.ex8;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

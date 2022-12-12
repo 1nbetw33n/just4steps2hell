@@ -34,8 +34,9 @@
  * -will be extended if necessary-
  */
 
-package eidp.ws22.ex11;
+package main.eidp.ws22.ex11;
 
+import eidp.ws22.ex11.Stack;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

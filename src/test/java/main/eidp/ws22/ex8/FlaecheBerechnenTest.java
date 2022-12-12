@@ -34,9 +34,11 @@
  * -will be extended if necessary-
  */
 
-package eidp.ws22.ex8;
+package main.eidp.ws22.ex8;
 
+import eidp.ws22.ex8.FlaecheBerechnen;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -67,7 +69,7 @@ class FlaecheBerechnenTest {
 
         @Test
         void flaecheBerechnen() {
-                assertEquals(1, FlaecheBerechnen.flaecheBerechnen(coords));
+                Assertions.assertEquals(1, FlaecheBerechnen.flaecheBerechnen(coords));
         }
 
         @Test

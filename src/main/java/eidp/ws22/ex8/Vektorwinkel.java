@@ -42,7 +42,7 @@ import org.jetbrains.annotations.Contract;
  * Created by 0x1nbetw33n on 11/14/22
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-final class Vektorwinkel {
+public final class Vektorwinkel {
 
 	/**
 	 * Hidden constructor, because this is a utility class and shall not be instantiated.
@@ -60,7 +60,7 @@ final class Vektorwinkel {
 	 * @throws IllegalArgumentException if the vectors ain't have the same length.
 	 */
 	@Contract(pure = true)
-	static double calc_scalar_product(double[] v1, double[] v2) {
+	public static double calc_scalar_product(double[] v1, double[] v2) {
 		if (v1.length != v2.length) {
 			throw new IllegalArgumentException("Vectors must have the same length");
 		} else {
@@ -78,7 +78,7 @@ final class Vektorwinkel {
 	 * @return the norm of the vector.
 	 */
 	@Contract(pure = true)
-	static double calc_norm(double[] v) {
+	public static double calc_norm(double[] v) {
 		double norm = 0;
 		for (double d : v) {
 			norm += d * d;
@@ -95,7 +95,7 @@ final class Vektorwinkel {
 	 * @throws IllegalArgumentException if the vectors ain't have the same length.
 	 */
 	@Contract(pure = true)
-	static double winkel(final double[] v1, final double[] v2) {
+	public static double winkel(final double[] v1, final double[] v2) {
 		if (v1.length != v2.length) {
 			throw new IllegalArgumentException("Vectors must have the same length");
 		} else {

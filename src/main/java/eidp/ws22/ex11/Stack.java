@@ -43,7 +43,7 @@ import org.jetbrains.annotations.NotNull;
  * Created by 0x1nbetw33n on 12. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-final class Stack<E> {
+public final class Stack<E> {
 
         private E[] stack;
         private int index;
@@ -54,7 +54,7 @@ final class Stack<E> {
          */
         @SuppressWarnings("unchecked")
         @Contract(pure = true)
-        Stack() {
+        public Stack() {
                 stack = (E[]) new Object[1];
                 index = 0;
         }
@@ -64,7 +64,7 @@ final class Stack<E> {
          * @param value The element to push.
          */
         @SuppressWarnings("unchecked")
-        void push(final E value) {
+        public void push(final E value) {
                 if (index == stack.length) {
                         final E[] newStack = (E[]) new Object[stack.length * 2];
                         System.arraycopy(stack, 0, newStack, 0, stack.length);
@@ -78,7 +78,7 @@ final class Stack<E> {
          * @return The element on the top of the stack and removes it.
          */
         @Contract(mutates = "this")
-        E pop() {
+        public E pop() {
                 if (index == 0) {
                         throw new IllegalStateException("Stack is empty.");
                 }
@@ -90,7 +90,7 @@ final class Stack<E> {
          * @return True if the stack is empty, false otherwise.
          */
         @Contract(pure = true)
-        boolean is_empty() {
+        public boolean is_empty() {
                 return index == 0;
         }
 

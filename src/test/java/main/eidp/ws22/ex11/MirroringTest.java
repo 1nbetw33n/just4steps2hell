@@ -17,6 +17,7 @@
  *      - TERFs
  *      - TWERFs
  *      - SWERFs
+ *      - MAPs
  *   -will be extended if necessary-
  *
  * The above copyright notice and this permission notice shall be included in all
@@ -33,43 +34,41 @@
  * -will be extended if necessary-
  */
 
-package main.eidp.ws22;
+package main.eidp.ws22.ex11;
 
+import eidp.ws22.ex11.Stack;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static eidp.ws22.ex8.FlaecheBerechnen.calculate_surface_area;
-import static eidp.ws22.ex8.FlaecheBerechnen.flaecheBerechnen;
-import static org.junit.jupiter.api.Assertions.*;
+import static eidp.ws22.ex11.Mirroring.mirroring;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
- * Created by 0x1nbetw33n on 11/14/22
+ * Created by 0x1nbetw33n on 12. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-class FlaecheBerechnenTest {
+final class MirroringTest {
 
-	private float[][] coords;
+        private Stack<Object> stack;
 
-	@BeforeEach
-	void setUp() {
-		coords = new float[][]{
-			{0, 0},
-			{1, 0},
-			{1, 1},
-			{0, 1}
-		};
-	}
+        @BeforeEach
+        void setUp() {
+                stack = new Stack<>();
+        }
 
-	@AfterEach
-	void tearDown() {
-		coords = null;
-	}
+        @AfterEach
+        void tearDown() {
+                stack = null;
+        }
 
-	@Test
-	void FlaecheBerechnen_Test() {
-		assertEquals(1, flaecheBerechnen(coords));
-		assertEquals(1, calculate_surface_area(coords));
-	}
-
+        @Test
+        void spiegeln_test() {
+                stack.push("h");
+                stack.push("a");
+                stack.push("l");
+                stack.push("l");
+                stack.push("o");
+                assertEquals("ollah", mirroring(stack).toString());
+        }
 }
