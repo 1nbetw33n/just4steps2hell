@@ -55,6 +55,6 @@ class SpiegelnTest {
         }
 
         @Test
-        void spiegeln() {
+        void spiegeln_test() {
         }
 }

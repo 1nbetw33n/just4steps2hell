@@ -55,14 +55,14 @@ class StackTest {
         }
 
         @Test
-        void push() {
+        void push_test() {
         }
 
         @Test
-        void pop() {
+        void pop_test() {
         }
 
         @Test
-        void is_empty() {
+        void is_empty_test() {
         }
 }
