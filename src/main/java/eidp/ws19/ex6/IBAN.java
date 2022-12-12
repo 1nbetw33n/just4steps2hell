@@ -52,6 +52,7 @@ public class IBAN {
      * <p>
      * 123456 (account_nos < 10 digits will be padded with 0s at the beginning))
      */
+    @SuppressWarnings("SameParameterValue")
     IBAN(@NotNull String country_code, @NotNull String bank_code, @NotNull String account_no) {
         this.country_code = normalize_cc(country_code);
         this.bank_code = new StringBuilder(bank_code);

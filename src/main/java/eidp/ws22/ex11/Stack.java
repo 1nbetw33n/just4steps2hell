@@ -36,43 +36,79 @@
 
 package eidp.ws22.ex11;
 
-import misc.NotImplementedYetException;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 /*
  * Created by 0x1nbetw33n on 12. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-final class Stack <E> {
+final class Stack<E> {
+
+        private E[] stack;
+        private int index;
+
 
         /**
-         * Creates a new instance of Stack with dynamic size.
+         * Creates a new stack with one free slot.
          */
-        Stack() throws NotImplementedYetException {
-                throw new NotImplementedYetException();
+        @SuppressWarnings("unchecked")
+        @Contract(pure = true)
+        Stack() {
+                stack = (E[]) new Object[1];
+                index = 0;
         }
 
-
         /**
-         * Adds an element to the top of the stack.
-         * @param Elem The element to be pushed onto the stack.
+         * Pushes an element to the top of the stack.
+         * @param value The element to push.
          */
-        void push(final E Elem) throws NotImplementedYetException {
-                throw new NotImplementedYetException();
+        @SuppressWarnings("unchecked")
+        void push(final E value) {
+                if (index == stack.length) {
+                        final E[] newStack = (E[]) new Object[stack.length * 2];
+                        System.arraycopy(stack, 0, newStack, 0, stack.length);
+                        stack = newStack;
+                }
+                stack[index++] = value;
         }
 
         /**
-         * Removes the element at the top of the stack.
-         * @return The element at the top of the stack.
+         * Pops the top element of the stack.
+         * @return The element on the top of the stack and removes it.
          */
-        E pop() throws NotImplementedYetException {
-                throw new NotImplementedYetException();
+        @Contract(mutates = "this")
+        E pop() {
+                if (index == 0) {
+                        throw new IllegalStateException("Stack is empty.");
+                }
+                return stack[--index];
         }
 
         /**
          * Checks if the stack is empty.
-         * @return if the stack is empty.
+         * @return True if the stack is empty, false otherwise.
          */
-        boolean is_empty() throws NotImplementedYetException {
-                throw new NotImplementedYetException();
+        @Contract(pure = true)
+        boolean is_empty() {
+                return index == 0;
         }
+
+        /**
+         * Converts the stack to a string.
+         * @return The stack as a string.
+         */
+        public @NotNull String toString() {
+                final StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < index; i++) {
+                        if(stack[i] instanceof String) {sb.append(stack[i]);}
+                        else {
+                                if (i < index - 1) {sb.append(stack[i]).append(" ");}
+                                else { sb.append(stack[i]);}
+                        }
+
+                }
+                return sb.toString();
+        }
+
 }

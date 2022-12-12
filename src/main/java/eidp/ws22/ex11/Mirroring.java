@@ -36,14 +36,23 @@
 
 package eidp.ws22.ex11;
 
-import misc.NotImplementedYetException;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
 
 /*
  * Created by 0x1nbetw33n on 12. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-final class Spiegeln {
+final class Mirroring {
 
+
+        /**
+         * Hidden constructor, because this is a utility class and shall not be instantiated.
+         */
+        @Contract(value = " -> fail", pure = true)
+        private Mirroring() {
+                throw new IllegalStateException("Utility class");
+        }
 
         /**
          * Mirrors a Stack.
@@ -51,8 +60,12 @@ final class Spiegeln {
          * @param <E> The type of the stack.
          * @return The mirrored stack.
          */
-        static <E> Stack<E> spiegeln(final Stack<E> stack) throws NotImplementedYetException {
-                throw new NotImplementedYetException();
+        static <E> @NotNull Stack<E> mirroring(final @NotNull Stack<E> stack) {
+                final Stack<E> mirror = new Stack<>();
+                while (!stack.is_empty()) {
+                        mirror.push(stack.pop());
+                }
+                return mirror;
         }
 
 }

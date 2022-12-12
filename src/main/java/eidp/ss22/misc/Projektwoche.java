@@ -25,11 +25,11 @@ package eidp.ss22.misc;
 
 import org.jetbrains.annotations.NotNull;
 
-@SuppressWarnings({"FieldMayBeFinal", "unused"})
+@SuppressWarnings({"unused"})
 public class Projektwoche {
 
-    private String name;
-    private Person projektleitung;
+    private final String name;
+    private final Person projektleitung;
     private int maxParticipants;
     private boolean intern;
 

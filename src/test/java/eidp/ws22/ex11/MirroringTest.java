@@ -34,27 +34,40 @@
  * -will be extended if necessary-
  */
 
-package misc;
+package eidp.ws22.ex11;
 
-import org.jetbrains.annotations.Contract;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static eidp.ws22.ex11.Mirroring.mirroring;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
  * Created by 0x1nbetw33n on 12. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-@SuppressWarnings("unused")
-public final class NotImplementedYetException extends Throwable {
+final class MirroringTest {
 
-        /**
-         * This is a dummy exception and should not be used in production code.
-         * <p>
-         * It is only used to mark code that is not implemented yet and to make it testable.
-         * @throws RuntimeException always
-         */
-        @SuppressWarnings("unused")
-        @Contract(" -> fail")
-        public NotImplementedYetException(){
-                throw new RuntimeException("Not implemented yet");
+        private Stack<Object> stack;
+
+        @BeforeEach
+        void setUp() {
+                stack = new Stack<>();
+        }
+
+        @AfterEach
+        void tearDown() {
+                stack = null;
+        }
+
+        @Test
+        void spiegeln_test() {
+                stack.push("h");
+                stack.push("a");
+                stack.push("l");
+                stack.push("l");
+                stack.push("o");
+                assertEquals("ollah", mirroring(stack).toString());
         }
 }
-

@@ -29,6 +29,7 @@ package ex4;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -36,6 +37,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class No5 {
+
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private No5() {
+        throw new IllegalStateException("Utility class");
+    }
 
     private static final @NotNull List<? super Character> FILTER_LIST;
     private static final String filterString = "abcdefghijklmnopqrstuvwxyz0123456789";

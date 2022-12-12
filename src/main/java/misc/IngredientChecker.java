@@ -27,6 +27,8 @@ package misc;
 15.Oct.2021
 */
 
+import org.jetbrains.annotations.Contract;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,6 +36,14 @@ import java.util.stream.Collectors;
 import static misc.Util.*;
 
 public class IngredientChecker {
+
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private IngredientChecker() {
+        throw new IllegalStateException("Utility class");
+    }
 
     public static List<? extends String> BLACKLIST;
 

@@ -27,8 +27,18 @@ package misc;
 24.Mar.2022
 */
 
+import org.jetbrains.annotations.Contract;
+
 @SuppressWarnings("SameParameterValue")
 final class InterestCalculator {
+
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private InterestCalculator() {
+        throw new IllegalStateException("Utility class");
+    }
 
     /**
      * Calculates the compounded interest for a given amount of money {@code amount}, a given annual interest rate {@code interestRate} and a given number of years {@code years}.

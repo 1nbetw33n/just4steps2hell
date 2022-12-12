@@ -28,7 +28,17 @@ package misc;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.Contract;
+
 public class Banking_Util {
+
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private Banking_Util() {
+        throw new IllegalStateException("Utility class");
+    }
 
     static int create_kto_nr(int n){
         return n * 100 + (97 - ((n * 100) % 97));

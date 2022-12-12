@@ -31,6 +31,14 @@ import java.util.Scanner;
 
 public class No2 {
 
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private No2() {
+        throw new IllegalStateException("Utility class");
+    }
+
     //EVERYTHING ALLOWED
     public static int @NotNull [] toBinaryString(int integer) throws Exception {
         if (integer < 0){

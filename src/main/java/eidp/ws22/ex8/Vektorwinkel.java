@@ -45,6 +45,14 @@ import org.jetbrains.annotations.Contract;
 final class Vektorwinkel {
 
 	/**
+	 * Hidden constructor, because this is a utility class and shall not be instantiated.
+	 */
+	@Contract(value = " -> fail", pure = true)
+	private Vektorwinkel() {
+		throw new IllegalStateException("Utility class");
+	}
+
+	/**
 	 * Calculates the angle between two vectors.
 	 * @param v1 the first vector.
 	 * @param v2 the second vector.
@@ -52,7 +60,7 @@ final class Vektorwinkel {
 	 * @throws IllegalArgumentException if the vectors ain't have the same length.
 	 */
 	@Contract(pure = true)
-	private static double calc_scalar_product(double[] v1, double[] v2) {
+	static double calc_scalar_product(double[] v1, double[] v2) {
 		if (v1.length != v2.length) {
 			throw new IllegalArgumentException("Vectors must have the same length");
 		} else {
@@ -70,7 +78,7 @@ final class Vektorwinkel {
 	 * @return the norm of the vector.
 	 */
 	@Contract(pure = true)
-	private static double calc_norm(double[] v) {
+	static double calc_norm(double[] v) {
 		double norm = 0;
 		for (double d : v) {
 			norm += d * d;
@@ -87,14 +95,11 @@ final class Vektorwinkel {
 	 * @throws IllegalArgumentException if the vectors ain't have the same length.
 	 */
 	@Contract(pure = true)
-	public static double winkel(final double[] v1, final double[] v2) {
+	static double winkel(final double[] v1, final double[] v2) {
 		if (v1.length != v2.length) {
 			throw new IllegalArgumentException("Vectors must have the same length");
 		} else {
-			double scalar_product = calc_scalar_product(v1, v2);
-			double norm1 = calc_norm(v1);
-			double norm2 = calc_norm(v2);
-			return Math.acos(scalar_product / (norm1 * norm2));
+			return Math.acos(calc_scalar_product(v1, v2) / (calc_norm(v1) * calc_norm(v2))) * 180 / Math.PI;
 		}
 	}
 

@@ -28,6 +28,7 @@ package misc;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
@@ -43,6 +44,14 @@ import java.util.stream.Stream;
 
 @SuppressWarnings("unused")
 public final class Util {
+
+        /**
+         * Hidden constructor, because this is a utility class and shall not be instantiated.
+         */
+        @Contract(value = " -> fail", pure = true)
+        private Util() {
+                throw new IllegalStateException("Utility class");
+        }
 
         public static final String RESET = "\033[0m";  // Text Reset
 

@@ -28,9 +28,19 @@ package eidp.ss20.ex1;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.Contract;
+
 import static misc.Util.println;
 
 public class BMI_util {
+
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private BMI_util() {
+        throw new IllegalStateException("Utility class");
+    }
 
     /**
      * Calculates the bmi

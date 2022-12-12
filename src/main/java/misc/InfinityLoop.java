@@ -23,7 +23,17 @@
 
 package misc;
 
+import org.jetbrains.annotations.Contract;
+
 public class InfinityLoop {
+
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private InfinityLoop() {
+        throw new IllegalStateException("Utility class");
+    }
 
     @SuppressWarnings("InfiniteLoopStatement")
     static void initLoop(){

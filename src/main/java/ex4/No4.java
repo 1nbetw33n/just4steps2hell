@@ -40,11 +40,20 @@ package ex4;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Assertions;
 
 
 public class No4 {
+
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private No4() {
+        throw new IllegalStateException("Utility class");
+    }
 
     static boolean isPalindrome(@NotNull String input) {
         char[] possiblePalindrome = input.toCharArray();

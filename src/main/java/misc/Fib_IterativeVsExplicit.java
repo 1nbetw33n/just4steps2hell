@@ -28,6 +28,7 @@ package misc;
 */
 
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serial;
@@ -35,6 +36,14 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public class Fib_IterativeVsExplicit {
+
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private Fib_IterativeVsExplicit() {
+        throw new IllegalStateException("Utility class");
+    }
 
     private static class
     FibException extends Exception{

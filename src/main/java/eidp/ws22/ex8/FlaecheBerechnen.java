@@ -46,6 +46,14 @@ import static java.lang.Math.abs;
 public final class FlaecheBerechnen {
 
 	/**
+	 * Hidden constructor, because this is a utility class and shall not be instantiated.
+	 */
+	@Contract(value = " -> fail", pure = true)
+	private FlaecheBerechnen() {
+		throw new IllegalStateException("Utility class");
+	}
+
+	/**
 	 * Calculates the area of a closed polygon with the formula provided by Rudolf Berrendorf.
 	 * <p>
 	 * The polygon is defined by a list of coordinates.

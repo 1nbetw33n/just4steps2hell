@@ -41,6 +41,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static eidp.ws22.ex8.Vektorwinkel.*;
+import static java.lang.Math.abs;
 import static org.junit.jupiter.api.Assertions.*;
 
 /*
@@ -83,10 +84,30 @@ class VektorwinkelTest {
 	}
 
 	@Test
+	void calc_scalar_product_test(){
+		assertEquals(1, calc_scalar_product(v1, v2));
+		assertEquals(4, calc_scalar_product(v3, v4));
+		assertEquals(0, calc_scalar_product(v5, v6));
+		assertEquals(10, calc_scalar_product(v7, v8));
+	}
+
+	@Test
+	void calc_norm_test(){
+		assertEquals(1, calc_norm(v1));
+		assertEquals(Math.sqrt(2), calc_norm(v2));
+		assertEquals(Math.sqrt(5), calc_norm(v3));
+		assertEquals(Math.sqrt(5), calc_norm(v4));
+		assertEquals(1, calc_norm(v5));
+		assertEquals(1, calc_norm(v6));
+		assertEquals(2, calc_norm(v7));
+		assertEquals(Math.sqrt(30), calc_norm(v8));
+	}
+
+	@Test
 	void winkel_test() {
-		assertEquals(45, winkel(v1, v2));
-		assertEquals(36, winkel(v3, v4));
-		assertEquals(90, winkel(v5, v6));
-		assertEquals(24, winkel(v7, v8));
+		assertTrue(abs(45 - winkel(v1, v2)) < 0.00000000000001);
+		assertTrue(abs(36.86989764584404 - winkel(v3, v4)) < 0.00000000000001);
+		assertTrue(abs(90 - winkel(v5, v6)) < 0.00000000000001);
+		assertTrue(abs(24.094842552110695 - winkel(v7, v8)) < 0.00000000000001);
 	}
 }

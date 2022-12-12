@@ -28,11 +28,20 @@ package misc;
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
 final class BinaryChoice {
+
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private BinaryChoice() {
+        throw new IllegalStateException("Utility class");
+    }
 
     private static final String[] binaryChoice = {"Frau", "Mann"};
     private static final Random random = new Random();

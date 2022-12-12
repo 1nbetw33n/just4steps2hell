@@ -28,6 +28,14 @@ import org.jetbrains.annotations.NotNull;
 
 public class No1 {
 
+    /**
+     * Hidden constructor, because this is a utility class and shall not be instantiated.
+     */
+    @Contract(value = " -> fail", pure = true)
+    private No1() {
+        throw new IllegalStateException("Utility class");
+    }
+
     @Contract(pure = true)
     static int @NotNull [] createStaticArray(){
         int[] staticIntArray = new int[10];

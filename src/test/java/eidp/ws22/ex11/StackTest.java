@@ -40,29 +40,103 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 /*
  * Created by 0x1nbetw33n on 12. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-class StackTest {
+final class StackTest {
+
+        private Stack<Object> stack;
+
 
         @BeforeEach
         void setUp() {
+                stack = new Stack<>();
         }
+
 
         @AfterEach
         void tearDown() {
+                stack = null;
         }
 
+
+        /**
+         * Test method for {@link eidp.ws22.ex11.Stack#push(java.lang.Object)}
+         * and {@link eidp.ws22.ex11.Stack#pop()}.
+         */
         @Test
-        void push_test() {
+        void push_pop_test() {
+                stack.push("a");
+                stack.push("b");
+                stack.push("c");
+                assertEquals("c", stack.pop());
+                assertEquals("b", stack.pop());
+                assertEquals("a", stack.pop());
+
+                stack.push(1);
+                stack.push(2);
+                stack.push(3);
+                assertEquals(3, stack.pop());
+                assertEquals(2, stack.pop());
+                assertEquals(1, stack.pop());
+
+                stack.push(1.);
+                stack.push(2.);
+                stack.push(3.);
+                assertEquals(3., stack.pop());
+                assertEquals(2., stack.pop());
+                assertEquals(1., stack.pop());
+
+                stack.push('a');
+                stack.push('b');
+                stack.push('c');
+                assertEquals('c', stack.pop());
+                assertEquals('b', stack.pop());
+                assertEquals('a', stack.pop());
+
+                stack.push(true);
+                stack.push(false);
+                assertEquals(false, stack.pop());
+                assertEquals(true, stack.pop());
+
+                stack.push(null);
+                assertNull(stack.pop());
+
+                stack.push(new Object());
+                assertNotNull(stack.pop());
         }
 
-        @Test
-        void pop_test() {
-        }
-
+        /**
+         * Test method for {@link Stack#is_empty()}.
+         */
         @Test
         void is_empty_test() {
+                assertTrue(stack.is_empty());
+                stack.push("a");
+                assertFalse(stack.is_empty());
+                stack.pop();
+                assertTrue(stack.is_empty());
+
+                stack.push(1);
+                assertFalse(stack.is_empty());
+                stack.pop();
+                assertTrue(stack.is_empty());
+        }
+
+        @Test
+        void toString_test() {
+                stack.push("a");
+                stack.push("b");
+                stack.push("c");
+                assertEquals("abc", stack.toString());
+                stack.pop();
+                assertEquals("ab", stack.toString());
+                stack.pop();
+                assertEquals("a", stack.toString());
+                stack.pop();
+                assertEquals("", stack.toString());
         }
 }

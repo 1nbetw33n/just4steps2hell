@@ -34,27 +34,44 @@
  * -will be extended if necessary-
  */
 
-package eidp.ws22.ex11;
+package eidp.ws22.ex8;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 /*
  * Created by 0x1nbetw33n on 12. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-class SpiegelnTest {
+class FlaecheBerechnenTest {
+
+        private float[][] coords;
 
         @BeforeEach
         void setUp() {
+                coords = new float[][]{
+                        {0, 0},
+                        {1, 0},
+                        {1, 1},
+                        {0, 1}
+                };
         }
 
         @AfterEach
         void tearDown() {
+                coords = null;
         }
 
         @Test
-        void spiegeln_test() {
+        void flaecheBerechnen() {
+                assertEquals(1, FlaecheBerechnen.flaecheBerechnen(coords));
+        }
+
+        @Test
+        void calculate_surface_area() {
+                assertEquals(1, FlaecheBerechnen.calculate_surface_area(coords));
         }
 }

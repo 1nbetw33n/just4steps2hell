@@ -1,10 +1,11 @@
 package main.eidp.ss20.ex1;
 
-import eidp.ss20.ex1.BMI_util;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static eidp.ss20.ex1.BMI_util.calc_bmi;
 
 /*
  * Created by 0x1nbetw33n on 07/08/2022
@@ -12,7 +13,6 @@ import org.junit.jupiter.api.Test;
  */
 @SuppressWarnings("NewClassNamingConvention")
 class BMI_util_test {
-	final BMI_util bMI_util = new BMI_util();
 
 	double weight1;
 	double weight2;
@@ -32,9 +32,9 @@ class BMI_util_test {
 		height1 = 1.60;
 		height2 = 1.78;
 		height3 = 1.85;
-		result1 = bMI_util.calc_bmi(weight1, height1);
-		result2 = bMI_util.calc_bmi(weight2, height2);
-		result3 = bMI_util.calc_bmi(weight3, height3);
+		result1 = calc_bmi(weight1, height1);
+		result2 = calc_bmi(weight2, height2);
+		result3 = calc_bmi(weight3, height3);
 	}
 
 	@AfterEach
