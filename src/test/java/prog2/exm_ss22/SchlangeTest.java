@@ -34,46 +34,54 @@
  * -will be extended if necessary-
  */
 
-package main.eidp.ws22.ex8;
+package prog2.exm_ss22;
 
-import eidp.ws22.ex8.FlaecheBerechnen;
+import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Objects;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
- * Created by 0x1nbetw33n on 12. Dec 2022
+ * Created by 0x1nbetw33n on 21/07/2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-class FlaecheBerechnenTest {
+class SchlangeTest {
+	private @Nullable Schlange<Integer> schlange;
 
-        private float[][] coords;
+	@BeforeEach
+	void setUp() {
+		schlange = new Schlange<>();
+	}
 
-        @BeforeEach
-        void setUp() {
-                coords = new float[][]{
-                        {0, 0},
-                        {1, 0},
-                        {1, 1},
-                        {0, 1}
-                };
-        }
+	@AfterEach
+	void tearDown() {
+		schlange = null;
+	}
 
-        @AfterEach
-        void tearDown() {
-                coords = null;
-        }
+	@Test
+	void insertRemoveTest(){
+		Objects.requireNonNull(schlange).insert(1);
+		schlange.insert(2);
+		schlange.insert(3);
+		schlange.insert(4);
+		schlange.insert(5);
+		assertEquals(5, schlange.size());
+		assertEquals(1, schlange.remove());
+		assertEquals(2, schlange.remove());
+		assertEquals(3, schlange.remove());
+		assertEquals(4, schlange.remove());
+		assertEquals(5, schlange.remove());
+		assertEquals(0, schlange.size());
+	}
 
-        @Test
-        void flaecheBerechnen() {
-                Assertions.assertEquals(1, FlaecheBerechnen.flaecheBerechnen(coords));
-        }
+	@Test
+	void removeEmptyExceptionTest(){
+		Assertions.assertThrows(RuntimeException.class, () -> Objects.requireNonNull(schlange).remove());
+	}
 
-        @Test
-        void calculate_surface_area() {
-                assertEquals(1, FlaecheBerechnen.calculate_surface_area(coords));
-        }
 }

@@ -34,38 +34,60 @@
  * -will be extended if necessary-
  */
 
-package eidp.ws22.ex11;
+package eidp.ss20.ex1;
 
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static eidp.ss20.ex1.BMI_util.calc_bmi;
 
 /*
- * Created by 0x1nbetw33n on 12. Dec 2022
+ * Created by 0x1nbetw33n on 07/08/2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-public final class Mirroring {
+@SuppressWarnings("NewClassNamingConvention")
+class BMI_util_test {
+
+	double weight1;
+	double weight2;
+	double weight3;
+	double height1;
+	double height2;
+	double height3;
+	double result1;
+	double result2;
+	double result3;
+
+	@BeforeEach
+	void set_up(){
+		weight1 = 70.;
+		weight2 = 63.;
+		weight3 = 85.;
+		height1 = 1.60;
+		height2 = 1.78;
+		height3 = 1.85;
+		result1 = calc_bmi(weight1, height1);
+		result2 = calc_bmi(weight2, height2);
+		result3 = calc_bmi(weight3, height3);
+	}
+
+	@AfterEach
+	void tear_down(){
+		weight1 = 0.;
+		weight2 = 0.;
+		weight3 = 0.;
+		height1 = 0.;
+		height2 = 0.;
+		height3 = 0.;
+	}
 
 
-        /**
-         * Hidden constructor, because this is a utility class and shall not be instantiated.
-         */
-        @Contract(value = " -> fail", pure = true)
-        private Mirroring() {
-                throw new IllegalStateException("Utility class");
-        }
-
-        /**
-         * Mirrors a Stack.
-         * @param stack The stack to be mirrored.
-         * @param <E> The type of the stack.
-         * @return The mirrored stack.
-         */
-        static <E> @NotNull Stack<E> mirroring(final @NotNull Stack<E> stack) {
-                final Stack<E> mirror = new Stack<>();
-                while (!stack.is_empty()) {
-                        mirror.push(stack.pop());
-                }
-                return mirror;
-        }
-
+	@Test
+	void testCalc_bmi() {
+		Assertions.assertTrue(27.34375 - result1 < 0.00001);
+		Assertions.assertTrue(19.883853049 - result2 < 0.00001);
+		Assertions.assertTrue(24.835646457 - result3 < 0.00001);
+	}
 }

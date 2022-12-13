@@ -60,7 +60,7 @@ public final class Vektorwinkel {
 	 * @throws IllegalArgumentException if the vectors ain't have the same length.
 	 */
 	@Contract(pure = true)
-	public static double calc_scalar_product(double[] v1, double[] v2) {
+	static double calc_scalar_product(double[] v1, double[] v2) {
 		if (v1.length != v2.length) {
 			throw new IllegalArgumentException("Vectors must have the same length");
 		} else {
@@ -78,7 +78,7 @@ public final class Vektorwinkel {
 	 * @return the norm of the vector.
 	 */
 	@Contract(pure = true)
-	public static double calc_norm(double[] v) {
+	static double calc_norm(double[] v) {
 		double norm = 0;
 		for (double d : v) {
 			norm += d * d;
@@ -95,7 +95,7 @@ public final class Vektorwinkel {
 	 * @throws IllegalArgumentException if the vectors ain't have the same length.
 	 */
 	@Contract(pure = true)
-	public static double winkel(final double[] v1, final double[] v2) {
+	static double winkel(final double[] v1, final double[] v2) {
 		if (v1.length != v2.length) {
 			throw new IllegalArgumentException("Vectors must have the same length");
 		} else {

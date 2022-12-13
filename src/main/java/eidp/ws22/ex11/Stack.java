@@ -64,7 +64,7 @@ public final class Stack<E> {
          * @param value The element to push.
          */
         @SuppressWarnings("unchecked")
-        public void push(final E value) {
+        void push(final E value) {
                 if (index == stack.length) {
                         final E[] newStack = (E[]) new Object[stack.length * 2];
                         System.arraycopy(stack, 0, newStack, 0, stack.length);
@@ -78,7 +78,7 @@ public final class Stack<E> {
          * @return The element on the top of the stack and removes it.
          */
         @Contract(mutates = "this")
-        public E pop() {
+        E pop() {
                 if (index == 0) {
                         throw new IllegalStateException("Stack is empty.");
                 }
@@ -90,7 +90,7 @@ public final class Stack<E> {
          * @return True if the stack is empty, false otherwise.
          */
         @Contract(pure = true)
-        public boolean is_empty() {
+        boolean is_empty() {
                 return index == 0;
         }
 

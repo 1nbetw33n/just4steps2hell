@@ -36,36 +36,38 @@
 
 package eidp.ws22.ex11;
 
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static eidp.ws22.ex11.Mirroring.mirroring;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
  * Created by 0x1nbetw33n on 12. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-public final class Mirroring {
+final class MirroringTest {
 
+        private Stack<Object> stack;
 
-        /**
-         * Hidden constructor, because this is a utility class and shall not be instantiated.
-         */
-        @Contract(value = " -> fail", pure = true)
-        private Mirroring() {
-                throw new IllegalStateException("Utility class");
+        @BeforeEach
+        void setUp() {
+                stack = new Stack<>();
         }
 
-        /**
-         * Mirrors a Stack.
-         * @param stack The stack to be mirrored.
-         * @param <E> The type of the stack.
-         * @return The mirrored stack.
-         */
-        static <E> @NotNull Stack<E> mirroring(final @NotNull Stack<E> stack) {
-                final Stack<E> mirror = new Stack<>();
-                while (!stack.is_empty()) {
-                        mirror.push(stack.pop());
-                }
-                return mirror;
+        @AfterEach
+        void tearDown() {
+                stack = null;
         }
 
+        @Test
+        void spiegeln_test() {
+                stack.push("h");
+                stack.push("a");
+                stack.push("l");
+                stack.push("l");
+                stack.push("o");
+                assertEquals("ollah", mirroring(stack).toString());
+        }
 }

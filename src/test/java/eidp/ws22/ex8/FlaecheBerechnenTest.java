@@ -34,41 +34,45 @@
  * -will be extended if necessary-
  */
 
-package main.eidp.ws22.ex11;
+package eidp.ws22.ex8;
 
-import eidp.ws22.ex11.Stack;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static eidp.ws22.ex11.Mirroring.mirroring;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
  * Created by 0x1nbetw33n on 12. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-final class MirroringTest {
+class FlaecheBerechnenTest {
 
-        private Stack<Object> stack;
+        private float[][] coords;
 
         @BeforeEach
         void setUp() {
-                stack = new Stack<>();
+                coords = new float[][]{
+                        {0, 0},
+                        {1, 0},
+                        {1, 1},
+                        {0, 1}
+                };
         }
 
         @AfterEach
         void tearDown() {
-                stack = null;
+                coords = null;
         }
 
         @Test
-        void spiegeln_test() {
-                stack.push("h");
-                stack.push("a");
-                stack.push("l");
-                stack.push("l");
-                stack.push("o");
-                assertEquals("ollah", mirroring(stack).toString());
+        void flaecheBerechnen() {
+                Assertions.assertEquals(1, FlaecheBerechnen.flaecheBerechnen(coords));
+        }
+
+        @Test
+        void calculate_surface_area() {
+                assertEquals(1, FlaecheBerechnen.calculate_surface_area(coords));
         }
 }

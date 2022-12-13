@@ -65,7 +65,7 @@ public final class FlaecheBerechnen {
 	 * @return the area of the polygon.
 	 */
 	@Contract(pure = true)
-	public static float flaecheBerechnen(float[][] coord) {
+	static float flaecheBerechnen(float[][] coord) {
 		float flaeche = 0f;
 		for (int i = 0; i < coord.length; i++) {
 			int j = (i + 1) % coord.length;
@@ -87,7 +87,7 @@ public final class FlaecheBerechnen {
 	 * @return the area of the polygon.
 	 */
 	@Contract(pure = true)
-	public static float calculate_surface_area(final float[][] coord) {
+	static float calculate_surface_area(final float[][] coord) {
 		float flaeche = 0f;
 		for (int i = 0; i < coord.length; i++) {
 			int j = (i + 1) % coord.length;

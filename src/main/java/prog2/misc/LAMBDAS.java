@@ -35,7 +35,7 @@ import java.util.*;
 import java.util.function.Predicate;
 
 @SuppressWarnings({"SameParameterValue", "unused", "MismatchedReadAndWriteOfArray"})
-public class LAMBDAS{
+public final class LAMBDAS{
 
     static int ggT(int no1, int no2){
         int max = Math.max(no1, no2);

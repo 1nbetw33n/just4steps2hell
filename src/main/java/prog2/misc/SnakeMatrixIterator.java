@@ -38,7 +38,7 @@ public class SnakeMatrixIterator<T> implements Iterator<T> {
     private final T[][] snakeMatrix;
     private int j, i;
 
-    public SnakeMatrixIterator(@NotNull T[][] snakeMatrix) {this.snakeMatrix = snakeMatrix;}
+    SnakeMatrixIterator(@NotNull T[][] snakeMatrix) {this.snakeMatrix = snakeMatrix;}
 
     public boolean hasNext() {
         return i < snakeMatrix[0].length;
