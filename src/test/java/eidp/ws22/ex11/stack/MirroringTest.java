@@ -34,13 +34,13 @@
  * -will be extended if necessary-
  */
 
-package eidp.ws22.ex11;
+package eidp.ws22.ex11.stack;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static eidp.ws22.ex11.Mirroring.mirroring;
+import static eidp.ws22.ex11.stack.Mirroring.mirroring;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*

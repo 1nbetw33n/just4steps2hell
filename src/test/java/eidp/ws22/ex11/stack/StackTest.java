@@ -34,7 +34,7 @@
  * -will be extended if necessary-
  */
 
-package eidp.ws22.ex11;
+package eidp.ws22.ex11.stack;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -64,8 +64,8 @@ final class StackTest {
 
 
         /**
-         * Test method for {@link eidp.ws22.ex11.Stack#push(java.lang.Object)}
-         * and {@link eidp.ws22.ex11.Stack#pop()}.
+         * Test method for {@link Stack#push(java.lang.Object)}
+         * and {@link Stack#pop()}.
          */
         @Test
         void push_pop_test() {

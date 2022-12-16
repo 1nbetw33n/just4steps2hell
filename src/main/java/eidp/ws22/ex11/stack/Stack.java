@@ -34,7 +34,7 @@
  * -will be extended if necessary-
  */
 
-package eidp.ws22.ex11;
+package eidp.ws22.ex11.stack;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;

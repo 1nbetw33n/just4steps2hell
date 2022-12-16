@@ -34,38 +34,36 @@
  * -will be extended if necessary-
  */
 
-package eidp.ws22.ex11;
+package eidp.ws22.ex11.football;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 /*
- * Created by 0x1nbetw33n on 12. Dec 2022
+ * Created by 0x1nbetw33n on 16. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-public final class Mirroring {
+final class Footballer extends Person {
 
-
-        /**
-         * Hidden constructor, because this is a utility class and shall not be instantiated.
-         */
-        @Contract(value = " -> fail", pure = true)
-        private Mirroring() {
-                throw new IllegalStateException("Utility class");
-        }
+        private final int salary;
 
         /**
-         * Mirrors a Stack.
-         * @param stack The stack to be mirrored.
-         * @param <E> The type of the stack.
-         * @return The mirrored stack.
+         * Constructor for Footballer.
+         * @param name name of the footballer
+         * @param salary salary of the footballer
          */
-        static <E> @NotNull Stack<E> mirroring(final @NotNull Stack<E> stack) {
-                final Stack<E> mirror = new Stack<>();
-                while (!stack.is_empty()) {
-                        mirror.push(stack.pop());
-                }
-                return mirror;
+        Footballer(final String name, final int salary) {
+                super(name);
+                this.salary = salary;
         }
 
+        @Contract(pure = true)
+        public int getSalary() {
+                return salary;
+        }
+
+        @Contract(pure = true)
+        public @NotNull String toString() {
+                return getName() + " " + salary;
+        }
 }
