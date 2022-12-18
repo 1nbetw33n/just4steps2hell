@@ -47,8 +47,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Created by 0x1nbetw33n on 16. Dec 2022
  * Virgo Supercluster, Milky Way - Earth A-6847
  */
-@SuppressWarnings("NewClassNamingConvention")
-final class Football_Test {
+final class FootballTest {
 
         private Team team;
         private Team team_red;
@@ -78,6 +77,7 @@ final class Football_Test {
                 }
         }
 
+        @SuppressWarnings("UnstableApiUsage")
         @Contract(mutates = "this")
         @AfterEach
         void tear_down(){

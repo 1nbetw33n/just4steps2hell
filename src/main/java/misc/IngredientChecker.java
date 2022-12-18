@@ -40,10 +40,8 @@ public class IngredientChecker {
     /**
      * Hidden constructor, because this is a utility class and shall not be instantiated.
      */
-    @Contract(value = " -> fail", pure = true)
-    private IngredientChecker() {
-        throw new IllegalStateException("Utility class");
-    }
+    @Contract(pure = true)
+    private IngredientChecker() {}
 
     public static List<? extends String> BLACKLIST;
 
