@@ -232,9 +232,11 @@ final class WebShop {
 
         /**
          * Gets the customer with the given name.
-         * @param name The name of the customer.
-         * @return The customer with the given name.
-         * @see #customer_exists(String, String)
+         * <p>
+         * No need for further error handling in {@link WebShop#get_customer(String, String)},
+         * because all possible errors will be handled in {@link Webshop#customer_exists(String, String)}.
+         * @param name the name of the customer.
+         * @return the customer with the given name.
          * @throws IllegalArgumentException if the name or surname is null, empty or blank.
          */
         static Customer get_customer(final String name, final String surname) {
